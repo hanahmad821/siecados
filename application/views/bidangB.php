@@ -21,13 +21,13 @@
             <div class="content-wrapper-before"></div>
             <div class="content-header row">
                 <div class="content-header-left col-md-8 col-12 mb-2 breadcrumb-new">
-                    <h3 class="content-header-title mb-0 d-inline-block">Form Bidang A</h3>
+                    <h3 class="content-header-title mb-0 d-inline-block">Form Bidang B</h3>
                     <div class="row breadcrumbs-top d-inline-block">
                         <div class="breadcrumb-wrapper mr-1">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="<?php echo base_url(); ?>index.html">Home</a>
                                 </li>
-                                <li class="breadcrumb-item"><a href="<?php echo base_url(); ?>#">Bidang A</a>
+                                <li class="breadcrumb-item"><a href="<?php echo base_url(); ?>#">Bidang B</a>
                                 </li>
                                 <li class="breadcrumb-item active">Form Input
                                 </li>
@@ -80,17 +80,20 @@
                                             <!-- <label class="col-md-2 label-control" for="projectinput5">Kode Matkul</label> -->
                                             <div class="form-group col-md-12 mb-2">
                                                 <!-- <input type="text" class="form-control" placeholder="Kode Matkul" name="first"> -->
-                                                <select id="kode_mk" name="kode_mk" class="form-control">
-                                                    <option value="none" selected="" disabled="">Kode Matkul</option>
-                                                    <option value="ISYS6327035">ISYS6327035 - Thesis (lanjut)</option>
-                                                    <option value="ISYS6296038">ISYS6296038 - Information Systems Concept</option>
-                                                    <option value="ISYS6299035">ISYS6299035 - Business Process Fundamental</option>
-                                                    <option value="ISYS6300035">ISYS6300035 - Enterprise Systems</option>
-                                                    <option value="ISYS6305035">ISYS6305035 - Data and Information Management</option>
+                                                <select id="publikasi" name="publikasi" class="form-control">
+                                                    <option value="none" selected="" disabled="">Publikasi</option>
+                                                    <option value="International Journal">International Journal</option>
+                                                    <option value="Nasional Journal">Nasional Journal</option>
+                                                    <option value="International Conference">International Conference</option>
                                                 </select>
                                             </div>
+                                            <div id="frm-publikasi International-Journal">
+                                                <div class="form-group col-md-12 mb-2">
+                                                    <input type="text" class="form-control" placeholder="Judul Paper" name="judul_paper">
+                                                </div>
+                                            </div>
                                             <div class="form-group col-md-12 mb-2">
-                                                <input type="text" class="form-control" placeholder="SKS" name="sks">
+                                                <input type="text" class="form-control" placeholder="Judul Paper" name="judul_paper">
                                             </div>
                                             <div class="form-group col-md-12 mb-2">
                                                 <input type="text" class="form-control" placeholder="KELAS" name="kelas">
@@ -161,6 +164,40 @@
     <!-- BEGIN PAGE LEVEL JS-->
     <script src="<?php echo base_url(); ?>app-assets/js/scripts/forms/form-repeater.js" type="text/javascript"></script>
     <!-- END PAGE LEVEL JS-->
+
+    <script>
+        var publikasi = "";
+        $('#publikasi').change(function() {
+            if ($(this).val() == 'International Journal') {
+                var publikasi = "International Journal";
+                var divs = document.getElementById('International-Journal');
+                divs.style.display = 'none';
+
+            } else if ($(this).val() == 'Nasional Journal') {
+                var publikasi = "Nasional Journal";
+            } else if ($(this).val() == 'International Conference') {
+                var publikasi = "International Conference";
+            } else {
+                var publikasi = "";
+            }
+            console.log(publikasi);
+        });
+
+        function hideAllResponses() {
+            var divs = document.getElementById('frm-publikasi');
+            for (var i = divs.length; i--;) {
+                var div = divs[i];
+                console.log(div);
+
+                if (div.id === 'frm-publikasi') {
+                    div.style.display = 'none';
+                }
+            }
+        }
+    </script>
+    <?php
+    ?>
+
 </body>
 
 </html>
