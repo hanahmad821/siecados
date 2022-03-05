@@ -21,15 +21,15 @@
             <div class="content-wrapper-before"></div>
             <div class="content-header row">
                 <div class="content-header-left col-md-8 col-12 mb-2 breadcrumb-new">
-                    <h3 class="content-header-title mb-0 d-inline-block">Input Bidang A</h3>
+                    <h3 class="content-header-title mb-0 d-inline-block">Form Bidang A</h3>
                     <div class="row breadcrumbs-top d-inline-block">
                         <div class="breadcrumb-wrapper mr-1">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="<?php echo base_url(); ?>index.html">Home</a>
                                 </li>
-                                <li class="breadcrumb-item"><a href="<?php echo base_url(); ?>#">Forms</a>
+                                <li class="breadcrumb-item"><a href="<?php echo base_url(); ?>#">Bidang A</a>
                                 </li>
-                                <li class="breadcrumb-item active">Form Repeater
+                                <li class="breadcrumb-item active">Form Bidang A
                                 </li>
                             </ol>
                         </div>
@@ -44,7 +44,7 @@
                         <div class="col-xl-12 col-lg-12">
                             <div class="card">
                                 <div class="card-header">
-                                    <h4 class="card-title" id="file-repeater">Basic Example</h4>
+                                    <h4 class="card-title" id="file-repeater">Form Bidang A</h4>
                                     <a class="heading-elements-toggle">
                                         <i class="la la-ellipsis-h font-medium-3"></i>
                                     </a>
