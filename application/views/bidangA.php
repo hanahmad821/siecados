@@ -1,116 +1,214 @@
-<?php
-defined('BASEPATH') or exit('No direct script access allowed');
-?>
 <!DOCTYPE html>
 <html class="loading" lang="en" data-textdirection="ltr">
 
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
-    <meta name="description" content="Chameleon Admin is a modern Bootstrap 4 webapp &amp; admin dashboard html template with a large number of components, elegant design, clean and organized code.">
-    <meta name="keywords" content="admin template, Chameleon admin template, dashboard template, gradient admin template, responsive admin template, webapp, eCommerce dashboard, analytic dashboard">
-    <meta name="author" content="ThemeSelect">
-    <title>Siecados</title>
-    <link rel="apple-touch-icon" href="<?php echo base_url();?>app-assets/images/ico/apple-icon-120.png">
-    <link rel="shortcut icon" type="image/x-icon" href="<?php echo base_url();?>app-assets/images/ico/favicon.ico">
-    <link href="https://fonts.googleapis.com/css?family=Muli:300,300i,400,400i,600,600i,700,700i%7CComfortaa:300,400,700" rel="stylesheet">
-    <link href="https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome.min.css" rel="stylesheet">
-    <!-- BEGIN VENDOR CSS-->
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>app-assets/css/vendors.css">
-    <!-- END VENDOR CSS-->
-    <!-- BEGIN CHAMELEON  CSS-->
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>app-assets/css/app.css">
-    <!-- END CHAMELEON  CSS-->
-    <!-- BEGIN Page Level CSS-->
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>app-assets/css/core/menu/menu-types/vertical-menu-modern.css">
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>app-assets/css/core/colors/palette-gradient.css">
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>app-assets/css/pages/login-register.css">
-    <!-- END Page Level CSS-->
-    <!-- BEGIN Custom CSS-->
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/css/style.css">
-    <!-- END Custom CSS-->
+    <?php $this->load->view("_partials/head.php") ?>
 </head>
 
-<body class="vertical-layout vertical-menu-modern 1-column  bg-full-screen-image menu-expanded blank-page blank-page" data-open="click" data-menu="vertical-menu-modern" data-color="bg-gradient-x-purple-red" data-col="1-column">
+<body class="vertical-layout vertical-menu-modern 2-columns   menu-expanded fixed-navbar" data-open="click" data-menu="vertical-menu-modern" data-color="bg-chartbg" data-col="2-columns">
+
+    <?php $this->load->view("_partials/navbar.php") ?>
+
+
     <!-- ////////////////////////////////////////////////////////////////////////////-->
+
+
+    <?php $this->load->view("_partials/sidebar.php") ?>
+
+
     <div class="app-content content">
         <div class="content-wrapper">
             <div class="content-wrapper-before"></div>
             <div class="content-header row">
+                <div class="content-header-left col-md-8 col-12 mb-2 breadcrumb-new">
+                    <h3 class="content-header-title mb-0 d-inline-block">Form Repeater</h3>
+                    <div class="row breadcrumbs-top d-inline-block">
+                        <div class="breadcrumb-wrapper mr-1">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="<?php echo base_url(); ?>index.html">Home</a>
+                                </li>
+                                <li class="breadcrumb-item"><a href="<?php echo base_url(); ?>#">Forms</a>
+                                </li>
+                                <li class="breadcrumb-item active">Form Repeater
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-header-right col-md-4 col-12"> <a class="btn btn-warning btn-min-width float-md-right box-shadow-4 mr-1 mb-1" href="<?php echo base_url(); ?>chat-application.html"><i class="ft-mail"></i> Email</a></div>
             </div>
             <div class="content-body">
-                <section class="flexbox-container">
-                    <div class="col-12 d-flex align-items-center justify-content-center">
-                        <div class="col-md-4 col-10 box-shadow-2 p-0">
-                            <div class="card border-grey border-lighten-3 px-1 py-1 m-0">
-                                <div class="card-header border-0">
-                                    <div class="text-center mb-1">
-                                        <img src="<?php echo base_url();?>app-assets/images/logo/logo-binus.png" style="width:40%; height:40%;"  alt="branding logo">
-                                    </div>
-                                    <div class="font-large-1  text-center">
-                                        Member Login
+                <!-- Form control repeater section start -->
+                <section id="form-control-repeater horizontal-form-layouts">
+                    <div class="row">
+                        <div class="col-xl-12 col-lg-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h4 class="card-title" id="file-repeater">Basic Example</h4>
+                                    <a class="heading-elements-toggle">
+                                        <i class="la la-ellipsis-h font-medium-3"></i>
+                                    </a>
+                                    <div class="heading-elements">
+                                        <ul class="list-inline mb-0">
+                                            <li>
+                                                <a data-action="collapse">
+                                                    <i class="ft-minus"></i>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a data-action="reload">
+                                                    <i class="ft-rotate-cw"></i>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a data-action="expand">
+                                                    <i class="ft-maximize"></i>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a data-action="close">
+                                                    <i class="ft-x"></i>
+                                                </a>
+                                            </li>
+                                        </ul>
                                     </div>
                                 </div>
-                                <div class="card-content">
-
+                                <div class="card-content collapse show">
                                     <div class="card-body">
-                                        <form class="form-horizontal" action="index.html" novalidate>
-                                            <fieldset class="form-group position-relative has-icon-left">
-                                                <input type="text" class="form-control round" id="user-name" placeholder="Your Username" required>
-                                                <div class="form-control-position">
-                                                    <i class="ft-user"></i>
-                                                </div>
-                                            </fieldset>
-                                            <fieldset class="form-group position-relative has-icon-left">
-                                                <input type="password" class="form-control round" id="user-password" placeholder="Enter Password" required>
-                                                <div class="form-control-position">
-                                                    <i class="ft-lock"></i>
-                                                </div>
-                                            </fieldset>
-                                            <div class="form-group row">
-                                                <div class="col-md-6 col-12 text-center text-sm-left">
 
-                                                </div>
-                                                <div class="col-md-6 col-12 float-sm-left text-center text-sm-right"><a href="<?php echo base_url();?>recover-password.html" class="card-link">Forgot Password?</a></div>
+                                        <form class="form row">
+                                            <div class="form-group col-md-6 mb-2">
+                                                <input type="text" class="form-control" placeholder="First Name" name="first">
                                             </div>
-                                            <div class="form-group text-center">
-                                                <button type="submit" class="btn round btn-block btn-glow btn-bg-gradient-x-purple-blue col-12 mr-1 mb-1">Login</button>
+                                            <div class="form-group col-md-6 mb-2">
+                                                <input type="text" class="form-control" placeholder="Last name" name="last">
+                                            </div>
+                                            <div class="form-group col-md-6 mb-2">
+                                                <input type="text" class="form-control" placeholder="City" name="city">
+                                            </div>
+                                            <div class="form-group col-md-6 mb-2">
+                                                <input type="text" class="form-control" placeholder="State" name="state">
+                                            </div>
+                                            <div class="form-group col-12 mb-2">
+                                                <textarea rows="5" class="form-control" name="description" placeholder="Description"></textarea>
+                                            </div>
+                                            <div class="form-group col-12 mb-2 file-repeater">
+                                                <div data-repeater-list="repeater-list">
+                                                    <div data-repeater-item>
+                                                        <div class="row mb-1">
+                                                            <div class="col-9 col-xl-10">
+                                                                <input type="text" class="form-control" placeholder="Phone No." name="phone">
+                                                            </div>
+                                                            <div class="col-2 col-xl-1">
+                                                                <button type="button" data-repeater-delete class="btn btn-icon btn-danger mr-1">
+                                                                    <i class="ft-x"></i>
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <button type="button" data-repeater-create class="btn btn-primary">
+                                                    <i class="ft-plus"></i> Add another contact
+                                                </button>
                                             </div>
 
                                         </form>
-                                    </div>
-                                    <!-- <p class="card-subtitle line-on-side text-muted text-center font-small-3 mx-2 my-2 "><span>OR Sign Up Using</span></p>
-                                    <div class="text-center">
-                                        <a href="<?php echo base_url();?>#" class="btn btn-social-icon round mr-1 mb-1 btn-facebook"><span class="ft-facebook"></span></a>
-                                        <a href="<?php echo base_url();?>#" class="btn btn-social-icon round mr-1 mb-1 btn-twitter"><span class="ft-twitter"></span></a>
-                                        <a href="<?php echo base_url();?>#" class="btn btn-social-icon round mr-1 mb-1 btn-instagram"><span class="ft-instagram"></span></a>
-                                    </div> -->
+                                        <form class="form form-horizontal">
+                                            <div class="form-body">
 
-                                    <p class="card-subtitle text-muted text-right font-small-3 mx-2 my-1"><span>Don't have an account ? <a href="<?php echo base_url();?>register.html" class="card-link">Sign Up</a></span></p>
+                                                <h4 class="form-section"><i class="ft-clipboard"></i> Project Details</h4>
+
+                                                <div class="form-group row">
+                                                    <label class="col-md-3 label-control" for="projectinput5">Kode Matkul</label>
+                                                    <div class="col-md-9">
+                                                        <input type="text" id="projectinput5" class="form-control" placeholder="Kode Matkul" name="kode-matkul">
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group row">
+                                                    <label class="col-md-3 label-control" for="projectinput6">Interested in</label>
+                                                    <div class="col-md-9">
+                                                        <select id="projectinput6" name="interested" class="form-control">
+                                                            <option value="none" selected="" disabled="">Interested in</option>
+                                                            <option value="design">design</option>
+                                                            <option value="development">development</option>
+                                                            <option value="illustration">illustration</option>
+                                                            <option value="branding">branding</option>
+                                                            <option value="video">video</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group row">
+                                                    <label class="col-md-3 label-control" for="projectinput7">Budget</label>
+                                                    <div class="col-md-9">
+                                                        <select id="projectinput7" name="budget" class="form-control">
+                                                            <option value="0" selected="" disabled="">Budget</option>
+                                                            <option value="less than 5000$">less than 5000$</option>
+                                                            <option value="5000$ - 10000$">5000$ - 10000$</option>
+                                                            <option value="10000$ - 20000$">10000$ - 20000$</option>
+                                                            <option value="more than 20000$">more than 20000$</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group row">
+                                                    <label class="col-md-3 label-control">Select File</label>
+                                                    <div class="col-md-9">
+                                                        <label id="projectinput8" class="file center-block">
+                                                            <input type="file" id="file">
+                                                            <span class="file-custom"></span>
+                                                        </label>
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group row">
+                                                    <label class="col-md-3 label-control" for="projectinput9">About Project</label>
+                                                    <div class="col-md-9">
+                                                        <textarea id="projectinput9" rows="5" class="form-control" name="comment" placeholder="About Project"></textarea>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-actions right">
+                                                <button type="button" class="btn btn-danger mr-1">
+                                                    <i class="ft-x"></i> Cancel
+                                                </button>
+                                                <button type="submit" class="btn btn-primary">
+                                                    <i class="la la-check-square-o"></i> Save
+                                                </button>
+                                            </div>
+                                        </form>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </section>
-
+                <!-- // Form control repeater section end -->
             </div>
         </div>
     </div>
     <!-- ////////////////////////////////////////////////////////////////////////////-->
 
+
+    <footer class="footer footer-static footer-light navbar-border navbar-shadow">
+        <?php $this->load->view("_partials/footer.php") ?>
+    </footer>
+
     <!-- BEGIN VENDOR JS-->
-    <script src="<?php echo base_url();?>app-assets/vendors/js/vendors.min.js" type="text/javascript"></script>
+    <script src="<?php echo base_url(); ?>app-assets/vendors/js/vendors.min.js" type="text/javascript"></script>
     <!-- BEGIN VENDOR JS-->
     <!-- BEGIN PAGE VENDOR JS-->
-    <script src="<?php echo base_url();?>app-assets/vendors/js/forms/validation/jqBootstrapValidation.js" type="text/javascript"></script>
+    <script src="<?php echo base_url(); ?>app-assets/vendors/js/forms/repeater/jquery.repeater.min.js" type="text/javascript"></script>
     <!-- END PAGE VENDOR JS-->
     <!-- BEGIN CHAMELEON  JS-->
-    <script src="<?php echo base_url();?>app-assets/js/core/app-menu.js" type="text/javascript"></script>
-    <script src="<?php echo base_url();?>app-assets/js/core/app.js" type="text/javascript"></script>
+    <script src="<?php echo base_url(); ?>app-assets/js/core/app-menu.js" type="text/javascript"></script>
+    <script src="<?php echo base_url(); ?>app-assets/js/core/app.js" type="text/javascript"></script>
     <!-- END CHAMELEON  JS-->
     <!-- BEGIN PAGE LEVEL JS-->
-    <script src="<?php echo base_url();?>app-assets/js/scripts/forms/form-login-register.js" type="text/javascript"></script>
+    <script src="<?php echo base_url(); ?>app-assets/js/scripts/forms/form-repeater.js" type="text/javascript"></script>
     <!-- END PAGE LEVEL JS-->
 </body>
 
