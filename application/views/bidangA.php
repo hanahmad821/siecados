@@ -21,7 +21,7 @@
             <div class="content-wrapper-before"></div>
             <div class="content-header row">
                 <div class="content-header-left col-md-8 col-12 mb-2 breadcrumb-new">
-                    <h3 class="content-header-title mb-0 d-inline-block">Form Repeater</h3>
+                    <h3 class="content-header-title mb-0 d-inline-block">Input Bidang A</h3>
                     <div class="row breadcrumbs-top d-inline-block">
                         <div class="breadcrumb-wrapper mr-1">
                             <ol class="breadcrumb">
@@ -77,20 +77,37 @@
                                     <div class="card-body">
 
                                         <form class="form row">
-                                            <div class="form-group col-md-6 mb-2">
-                                                <input type="text" class="form-control" placeholder="First Name" name="first">
+                                            <!-- <label class="col-md-2 label-control" for="projectinput5">Kode Matkul</label> -->
+                                            <div class="form-group col-md-12 mb-2">
+                                                <!-- <input type="text" class="form-control" placeholder="Kode Matkul" name="first"> -->
+                                                <select id="kode_mk" name="kode_mk" class="form-control">
+                                                    <option value="none" selected="" disabled="">Kode Matkul</option>
+                                                    <option value="ISYS6327035">ISYS6327035 - Thesis (lanjut)</option>
+                                                    <option value="ISYS6296038">ISYS6296038 - Information Systems Concept</option>
+                                                    <option value="ISYS6299035">ISYS6299035 - Business Process Fundamental</option>
+                                                    <option value="ISYS6300035">ISYS6300035 - Enterprise Systems</option>
+                                                    <option value="ISYS6305035">ISYS6305035 - Data and Information Management</option>
+                                                </select>
                                             </div>
-                                            <div class="form-group col-md-6 mb-2">
-                                                <input type="text" class="form-control" placeholder="Last name" name="last">
+                                            <div class="form-group col-md-12 mb-2">
+                                                <input type="text" class="form-control" placeholder="SKS" name="sks">
                                             </div>
-                                            <div class="form-group col-md-6 mb-2">
-                                                <input type="text" class="form-control" placeholder="City" name="city">
-                                            </div>
-                                            <div class="form-group col-md-6 mb-2">
-                                                <input type="text" class="form-control" placeholder="State" name="state">
+                                            <div class="form-group col-md-12 mb-2">
+                                                <input type="text" class="form-control" placeholder="KELAS" name="kelas">
                                             </div>
                                             <div class="form-group col-12 mb-2">
-                                                <textarea rows="5" class="form-control" name="description" placeholder="Description"></textarea>
+                                                <input type="text" class="form-control" name="dosen1" placeholder="NAMA DOSEN" disabled>
+                                            </div>
+                                            <div class="form-group col-md-12 mb-2">
+                                                <!-- <input type="text" class="form-control" placeholder="Kode Matkul" name="first"> -->
+                                                <select id="dosen2" name="dosen2" class="form-control">
+                                                    <option value="none" selected="" disabled="">Dosen 2</option>
+                                                    <option value="ISYS6327035">D4567 - Titan, S.Kom., MMSI.</option>
+                                                    <option value="ISYS6296038">D5001 - Hendro, S.Kom., M.M</option>
+                                                    <option value="ISYS6299035">D5088 - Dr. Feri Sulianta, S.T., M.T.I</option>
+                                                    <option value="ISYS6300035">ISYS6300035 - Enterprise Systems</option>
+                                                    <option value="ISYS6305035">ISYS6305035 - Data and Information Management</option>
+                                                </select>
                                             </div>
                                             <div class="form-group col-12 mb-2 file-repeater">
                                                 <div data-repeater-list="repeater-list">
@@ -113,72 +130,6 @@
                                                 </button>
                                             </div>
 
-                                        </form>
-                                        <form class="form form-horizontal">
-                                            <div class="form-body">
-
-                                                <h4 class="form-section"><i class="ft-clipboard"></i> Project Details</h4>
-
-                                                <div class="form-group row">
-                                                    <label class="col-md-3 label-control" for="projectinput5">Kode Matkul</label>
-                                                    <div class="col-md-9">
-                                                        <input type="text" id="projectinput5" class="form-control" placeholder="Kode Matkul" name="kode-matkul">
-                                                    </div>
-                                                </div>
-
-                                                <div class="form-group row">
-                                                    <label class="col-md-3 label-control" for="projectinput6">Interested in</label>
-                                                    <div class="col-md-9">
-                                                        <select id="projectinput6" name="interested" class="form-control">
-                                                            <option value="none" selected="" disabled="">Interested in</option>
-                                                            <option value="design">design</option>
-                                                            <option value="development">development</option>
-                                                            <option value="illustration">illustration</option>
-                                                            <option value="branding">branding</option>
-                                                            <option value="video">video</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-
-                                                <div class="form-group row">
-                                                    <label class="col-md-3 label-control" for="projectinput7">Budget</label>
-                                                    <div class="col-md-9">
-                                                        <select id="projectinput7" name="budget" class="form-control">
-                                                            <option value="0" selected="" disabled="">Budget</option>
-                                                            <option value="less than 5000$">less than 5000$</option>
-                                                            <option value="5000$ - 10000$">5000$ - 10000$</option>
-                                                            <option value="10000$ - 20000$">10000$ - 20000$</option>
-                                                            <option value="more than 20000$">more than 20000$</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-
-                                                <div class="form-group row">
-                                                    <label class="col-md-3 label-control">Select File</label>
-                                                    <div class="col-md-9">
-                                                        <label id="projectinput8" class="file center-block">
-                                                            <input type="file" id="file">
-                                                            <span class="file-custom"></span>
-                                                        </label>
-                                                    </div>
-                                                </div>
-
-                                                <div class="form-group row">
-                                                    <label class="col-md-3 label-control" for="projectinput9">About Project</label>
-                                                    <div class="col-md-9">
-                                                        <textarea id="projectinput9" rows="5" class="form-control" name="comment" placeholder="About Project"></textarea>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="form-actions right">
-                                                <button type="button" class="btn btn-danger mr-1">
-                                                    <i class="ft-x"></i> Cancel
-                                                </button>
-                                                <button type="submit" class="btn btn-primary">
-                                                    <i class="la la-check-square-o"></i> Save
-                                                </button>
-                                            </div>
                                         </form>
                                     </div>
                                 </div>
