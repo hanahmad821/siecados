@@ -39,7 +39,7 @@
             </div>
             <div class="content-body">
                 <!-- Form control repeater section start -->
-                <section id="form-control-repeater horizontal-form-layouts">
+                <section id="horizontal-form-layouts">
                     <div class="row">
                         <div class="col-xl-12 col-lg-12">
                             <div class="card">
@@ -76,64 +76,320 @@
                                 <div class="card-content collapse show">
                                     <div class="card-body">
 
-                                        <form class="form row">
-                                            <!-- <label class="col-md-2 label-control" for="projectinput5">Kode Matkul</label> -->
-                                            <div class="form-group col-md-12 mb-2">
-                                                <!-- <input type="text" class="form-control" placeholder="Kode Matkul" name="first"> -->
-                                                <select id="publikasi" name="publikasi" class="form-control">
-                                                    <option value="none" selected="" disabled="">Publikasi</option>
-                                                    <option value="International Journal">International Journal</option>
-                                                    <option value="Nasional Journal">Nasional Journal</option>
-                                                    <option value="International Conference">International Conference</option>
-                                                </select>
-                                            </div>
-                                            <div id="frm-publikasi International-Journal">
-                                                <div class="form-group col-md-12 mb-2">
-                                                    <input type="text" class="form-control" placeholder="Judul Paper" name="judul_paper">
-                                                </div>
-                                            </div>
-                                            <div class="form-group col-md-12 mb-2">
-                                                <input type="text" class="form-control" placeholder="Judul Paper" name="judul_paper">
-                                            </div>
-                                            <div class="form-group col-md-12 mb-2">
-                                                <input type="text" class="form-control" placeholder="KELAS" name="kelas">
-                                            </div>
-                                            <div class="form-group col-12 mb-2">
-                                                <input type="text" class="form-control" name="dosen1" placeholder="NAMA DOSEN" disabled>
-                                            </div>
-                                            <div class="form-group col-md-12 mb-2">
-                                                <!-- <input type="text" class="form-control" placeholder="Kode Matkul" name="first"> -->
-                                                <select id="dosen2" name="dosen2" class="form-control">
-                                                    <option value="none" selected="" disabled="">Dosen 2</option>
-                                                    <option value="ISYS6327035">D4567 - Titan, S.Kom., MMSI.</option>
-                                                    <option value="ISYS6296038">D5001 - Hendro, S.Kom., M.M</option>
-                                                    <option value="ISYS6299035">D5088 - Dr. Feri Sulianta, S.T., M.T.I</option>
-                                                    <option value="ISYS6300035">ISYS6300035 - Enterprise Systems</option>
-                                                    <option value="ISYS6305035">ISYS6305035 - Data and Information Management</option>
-                                                </select>
-                                            </div>
-                                            <div class="form-group col-12 mb-2 file-repeater">
-                                                <div data-repeater-list="repeater-list">
-                                                    <div data-repeater-item>
-                                                        <div class="row mb-1">
-                                                            <div class="col-9 col-xl-10">
-                                                                <input type="text" class="form-control" placeholder="Phone No." name="phone">
+                                        <div class="col-md-12">
+                                            <form class="form" action="" method="post">
+                                                <div class="form-body">
+                                                    <!-- <label class="col-md-2 label-control" for="projectinput5">Kode Matkul</label> -->
+                                                    <div class="form-group">
+                                                        <!-- <input type="text" class="form-control" placeholder="Kode Matkul" name="first"> -->
+                                                        <label for="publikasi">Publikasi</label>
+                                                        <select class="form-control border-primary" id="publikasi" name="publikasi">
+                                                            <option value="none" selected="" disabled="">Publikasi</option>
+                                                            <option value="International Journal">International Journal</option>
+                                                            <option value="Nasional Journal">Nasional Journal</option>
+                                                            <option value="International Conference">International Conference</option>
+                                                        </select>
+                                                    </div>
+                                                    <div id="int-journal" style="display: none;">
+                                                        <div class="form-group">
+                                                            <label for="judul_paper">Judul Paper</label>
+                                                            <input class="form-control border-primary" type="text" placeholder="Judul Paper" name="judul_paper">
+                                                        </div>
+                                                        <div class="file-repeater">
+                                                            <div data-repeater-list="repeater-list">
+                                                                <div data-repeater-item style="background-color: #f2f2f2; margin-bottom:20px">
+                                                                    <div class="row">
+                                                                        <div class="form-group col-md-6">
+                                                                            <label for="kd_dosen1">Kode Dosen</label>
+                                                                            <input class="form-control border-primary" type="text" name="kd_dosen1" placeholder="KODE DOSEN" disabled>
+                                                                        </div>
+                                                                        <div class="form-group col-md-6">
+                                                                            <label for="dosen1">Nama Dosen</label>
+                                                                            <input class="form-control border-primary" type="text" name="dosen1" placeholder="NAMA DOSEN" disabled>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="row">
+                                                                        <div class="form-group col-md-11">
+                                                                            <label for="afiliasi">Afiliasi</label>
+                                                                            <input class="form-control border-primary" type="text" name="afiliasi" placeholder="Afiliasi">
+                                                                        </div>
+                                                                        <div class="form-group col-xl-1" style="margin-top: 25px; float:right;">
+                                                                            <button type="button" data-repeater-delete class="btn btn-icon btn-danger mr-1">
+                                                                                <i class="ft-x"></i>
+                                                                            </button>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
                                                             </div>
-                                                            <div class="col-2 col-xl-1">
-                                                                <button type="button" data-repeater-delete class="btn btn-icon btn-danger mr-1">
-                                                                    <i class="ft-x"></i>
+                                                            <div class="form-group">
+                                                                <button type="button" data-repeater-create class="btn btn-primary">
+                                                                    <i class="ft-plus"></i> Add Author
                                                                 </button>
                                                             </div>
                                                         </div>
+                                                        <div class="form-group">
+                                                            <label for="author">As corresponding author?</label>
+                                                            <div class="row skin skin-flat" style="margin-left: initial;">
+                                                                <div>
+                                                                    <fieldset>
+                                                                        <input name="author" type="radio" name="input-radio-4" id="input-radio-15" value="yes">
+                                                                        <label for="input-radio-15">Yes</label>
+                                                                    </fieldset>
+                                                                    <fieldset>
+                                                                        <input name="author" type="radio" name="input-radio-4" id="input-radio-15" value="no">
+                                                                        <label for="input-radio-16">No</label>
+                                                                    </fieldset>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="nama_juranal">Nama Jurnal</label>
+                                                            <input class="form-control border-primary" type="text" placeholder="Nama Jurnal" name="nama_juranal">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="publisher">Publisher</label>
+                                                            <input class="form-control border-primary" type="text" placeholder="Publisher" name="publisher">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="link_jurnal">Link Jurnal</label>
+                                                            <input class="form-control border-primary" type="text" placeholder="Link Jurnal" name="link_jurnal">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="isbn_issn">ISBN/ISSN</label>
+                                                            <input class="form-control border-primary" type="text" placeholder="ISBN/ISSN" name="isbn_issn">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="volume_no">Volume/No</label>
+                                                            <input class="form-control border-primary" type="text" placeholder="Volume/No" name="volume_no">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="tahun">Tahun</label>
+                                                            <input class="form-control border-primary" type="text" placeholder="Tahun" name="tahun">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="loa">LOA (PDF/PNG/JPG)</label>
+                                                            <input type="file" class="form-control form-control-file border-primary" id="loa" accept=".jpg, .jpeg, .png, .pdf">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="loa">FINAL PAPER (PDF)</label>
+                                                            <input type="file" class="form-control form-control-file border-primary" id="loa" accept=".pdf">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="link_publikasi">Link Publikasi</label>
+                                                            <input class="form-control border-primary" type="text" placeholder="Link Publikasi" name="link_publikasi">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="indeks">Indeks</label>
+                                                            <input class="form-control border-primary" type="text" placeholder="IEEEE/SCOPUS/dll" name="indeks">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="link_indeks">Link Indeks</label>
+                                                            <input class="form-control border-primary" type="text" placeholder="Link Indeks" name="link_indeks">
+                                                        </div>
+
+
+                                                    </div>
+
+                                                    <div id="nas-journal" style="display: none;">
+                                                        <div class="form-group">
+                                                            <label for="judul_paper">Judul Paper</label>
+                                                            <input class="form-control border-primary" type="text" placeholder="Judul Paper" name="judul_paper">
+                                                        </div>
+                                                        <div class="file-repeater">
+                                                            <div data-repeater-list="repeater-list">
+                                                                <div data-repeater-item style="background-color: #f2f2f2; margin-bottom:20px">
+                                                                    <div class="row">
+                                                                        <div class="form-group col-md-6">
+                                                                            <label for="kd_dosen1">Kode Dosen</label>
+                                                                            <input class="form-control border-primary" type="text" name="kd_dosen1" placeholder="KODE DOSEN" disabled>
+                                                                        </div>
+                                                                        <div class="form-group col-md-6">
+                                                                            <label for="dosen1">Nama Dosen</label>
+                                                                            <input class="form-control border-primary" type="text" name="dosen1" placeholder="NAMA DOSEN" disabled>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="row">
+                                                                        <div class="form-group col-md-11">
+                                                                            <label for="afiliasi">Afiliasi</label>
+                                                                            <input class="form-control border-primary" type="text" name="afiliasi" placeholder="Afiliasi">
+                                                                        </div>
+                                                                        <div class="form-group col-xl-1" style="margin-top: 25px; float:right;">
+                                                                            <button type="button" data-repeater-delete class="btn btn-icon btn-danger mr-1">
+                                                                                <i class="ft-x"></i>
+                                                                            </button>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <button type="button" data-repeater-create class="btn btn-primary">
+                                                                    <i class="ft-plus"></i> Add Author
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="author">As corresponding author?</label>
+                                                            <div class="row skin skin-flat" style="margin-left: initial;">
+                                                                <div>
+                                                                    <fieldset>
+                                                                        <input name="author" type="radio" name="input-radio-4" id="input-radio-15" value="yes">
+                                                                        <label for="input-radio-15">Yes</label>
+                                                                    </fieldset>
+                                                                    <fieldset>
+                                                                        <input name="author" type="radio" name="input-radio-4" id="input-radio-15" value="no">
+                                                                        <label for="input-radio-16">No</label>
+                                                                    </fieldset>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="nama_juranal">Nama Jurnal</label>
+                                                            <input class="form-control border-primary" type="text" placeholder="Nama Jurnal" name="nama_juranal">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="publisher">Publisher</label>
+                                                            <input class="form-control border-primary" type="text" placeholder="Publisher" name="publisher">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="link_jurnal">Link Jurnal</label>
+                                                            <input class="form-control border-primary" type="text" placeholder="Link Jurnal" name="link_jurnal">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="isbn_issn">ISBN/ISSN</label>
+                                                            <input class="form-control border-primary" type="text" placeholder="ISBN/ISSN" name="isbn_issn">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="volume_no">Volume/No</label>
+                                                            <input class="form-control border-primary" type="text" placeholder="Volume/No" name="volume_no">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="tahun">Tahun</label>
+                                                            <input class="form-control border-primary" type="text" placeholder="Tahun" name="tahun">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="loa">LOA (PDF/PNG/JPG)</label>
+                                                            <input type="file" class="form-control form-control-file border-primary" id="loa" accept=".jpg, .jpeg, .png, .pdf">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="loa">FINAL PAPER (PDF)</label>
+                                                            <input type="file" class="form-control form-control-file border-primary" id="loa" accept=".pdf">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="link_publikasi">Link Publikasi</label>
+                                                            <input class="form-control border-primary" type="text" placeholder="Link Publikasi" name="link_publikasi">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="indeks">Indeks</label>
+                                                            <input class="form-control border-primary" type="text" placeholder="Sinta 1-Sinta 4" name="indeks">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="link_indeks">Link Indeks</label>
+                                                            <input class="form-control border-primary" type="text" placeholder="Link Indeks" name="link_indeks">
+                                                        </div>
+                                                    </div>
+                                                    <div id="int-con" style="display: none;">
+                                                        <div class="form-group">
+                                                            <label for="judul_paper">Judul Paper</label>
+                                                            <input class="form-control border-primary" type="text" placeholder="Judul Paper" name="judul_paper">
+                                                        </div>
+                                                        <div class="file-repeater">
+                                                            <div data-repeater-list="repeater-list">
+                                                                <div data-repeater-item style="background-color: #f2f2f2; margin-bottom:20px">
+                                                                    <div class="row">
+                                                                        <div class="form-group col-md-6">
+                                                                            <label for="kd_dosen1">Kode Dosen</label>
+                                                                            <input class="form-control border-primary" type="text" name="kd_dosen1" placeholder="KODE DOSEN" disabled>
+                                                                        </div>
+                                                                        <div class="form-group col-md-6">
+                                                                            <label for="dosen1">Nama Dosen</label>
+                                                                            <input class="form-control border-primary" type="text" name="dosen1" placeholder="NAMA DOSEN" disabled>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="row">
+                                                                        <div class="form-group col-md-11">
+                                                                            <label for="afiliasi">Afiliasi</label>
+                                                                            <input class="form-control border-primary" type="text" name="afiliasi" placeholder="Afiliasi">
+                                                                        </div>
+                                                                        <div class="form-group col-xl-1" style="margin-top: 25px; float:right;">
+                                                                            <button type="button" data-repeater-delete class="btn btn-icon btn-danger mr-1">
+                                                                                <i class="ft-x"></i>
+                                                                            </button>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <button type="button" data-repeater-create class="btn btn-primary">
+                                                                    <i class="ft-plus"></i> Add Author
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="author">As corresponding author?</label>
+                                                            <div class="row skin skin-flat" style="margin-left: initial;">
+                                                                <div>
+                                                                    <fieldset>
+                                                                        <input name="author" type="radio" name="input-radio-4" id="input-radio-15" value="yes">
+                                                                        <label for="input-radio-15">Yes</label>
+                                                                    </fieldset>
+                                                                    <fieldset>
+                                                                        <input name="author" type="radio" name="input-radio-4" id="input-radio-15" value="no">
+                                                                        <label for="input-radio-16">No</label>
+                                                                    </fieldset>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="nama_juranal">Nama Conference</label>
+                                                            <input class="form-control border-primary" type="text" placeholder="Nama Jurnal" name="nama_juranal">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label>Pelaksanaan</label>
+                                                            <div class="input-group">
+                                                                <input type="text" class="form-control daterange border-primary">
+                                                                <div class="input-group-append">
+                                                                    <span class="input-group-text">
+                                                                        <span class="la la-calendar"></span>
+                                                                    </span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="penyelenggara">Penyelenggara</label>
+                                                            <input class="form-control border-primary" type="text" placeholder="Penyelenggara" name="penyelenggara">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="link_conference">Link Conference</label>
+                                                            <input class="form-control border-primary" type="text" placeholder="Link Conference" name="link_conference">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="loa">LOA (PDF/PNG/JPG)</label>
+                                                            <input type="file" class="form-control form-control-file border-primary" id="loa" accept=".jpg, .jpeg, .png, .pdf">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="loa">FINAL PAPER (PDF)</label>
+                                                            <input type="file" class="form-control form-control-file border-primary" id="loa" accept=".pdf">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="indeks">Indeks</label>
+                                                            <input class="form-control border-primary" type="text" placeholder="IEEEE/SCOPUS/dll" name="indeks">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="link_indeks">Link Indeks</label>
+                                                            <input class="form-control border-primary" type="text" placeholder="Link Indeks" name="link_indeks">
+                                                        </div>
                                                     </div>
                                                 </div>
-
-                                                <button type="button" data-repeater-create class="btn btn-primary">
-                                                    <i class="ft-plus"></i> Add another contact
-                                                </button>
-                                            </div>
-
-                                        </form>
+                                                <div class="form-actions">
+                                                    <button type="button" class="btn btn-danger mr-1">
+                                                        <i class="ft-x"></i> Cancel
+                                                    </button>
+                                                    <button type="submit" class="btn btn-primary">
+                                                        <i class="la la-check-square-o"></i> Save
+                                                    </button>
+                                                </div>
+                                            </form>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -156,6 +412,13 @@
     <!-- BEGIN VENDOR JS-->
     <!-- BEGIN PAGE VENDOR JS-->
     <script src="<?php echo base_url(); ?>app-assets/vendors/js/forms/repeater/jquery.repeater.min.js" type="text/javascript"></script>
+    <script src="<?php echo base_url(); ?>app-assets/vendors/js/forms/icheck/icheck.min.js" type="text/javascript"></script>
+    <script src="<?php echo base_url(); ?>app-assets/vendors/js/pickers/pickadate/picker.js" type="text/javascript"></script>
+    <script src="<?php echo base_url(); ?>app-assets/vendors/js/pickers/pickadate/picker.date.js" type="text/javascript"></script>
+    <script src="<?php echo base_url(); ?>app-assets/vendors/js/pickers/pickadate/picker.time.js" type="text/javascript"></script>
+    <script src="<?php echo base_url(); ?>app-assets/vendors/js/pickers/pickadate/legacy.js" type="text/javascript"></script>
+    <script src="<?php echo base_url(); ?>app-assets/vendors/js/pickers/dateTime/moment-with-locales.min.js" type="text/javascript"></script>
+    <script src="<?php echo base_url(); ?>app-assets/vendors/js/pickers/daterange/daterangepicker.js" type="text/javascript"></script>
     <!-- END PAGE VENDOR JS-->
     <!-- BEGIN CHAMELEON  JS-->
     <script src="<?php echo base_url(); ?>app-assets/js/core/app-menu.js" type="text/javascript"></script>
@@ -163,37 +426,39 @@
     <!-- END CHAMELEON  JS-->
     <!-- BEGIN PAGE LEVEL JS-->
     <script src="<?php echo base_url(); ?>app-assets/js/scripts/forms/form-repeater.js" type="text/javascript"></script>
+    <script src="<?php echo base_url(); ?>app-assets/js/scripts/forms/checkbox-radio.js" type="text/javascript"></script>
+    <script src="<?php echo base_url(); ?>app-assets/js/scripts/pickers/dateTime/pick-a-datetime.js" type="text/javascript"></script>
+
+
     <!-- END PAGE LEVEL JS-->
 
     <script>
         var publikasi = "";
+        var x = document.getElementById("int-journal");
+        var y = document.getElementById("nas-journal");
+        var z = document.getElementById("int-con");
+
         $('#publikasi').change(function() {
             if ($(this).val() == 'International Journal') {
                 var publikasi = "International Journal";
-                var divs = document.getElementById('International-Journal');
-                divs.style.display = 'none';
-
+                x.style.display = "contents";
+                y.style.display = "none";
+                z.style.display = "none";
             } else if ($(this).val() == 'Nasional Journal') {
                 var publikasi = "Nasional Journal";
+                x.style.display = "none";
+                y.style.display = "contents";
+                z.style.display = "none";
             } else if ($(this).val() == 'International Conference') {
                 var publikasi = "International Conference";
+                x.style.display = "none";
+                y.style.display = "none";
+                z.style.display = "contents";
             } else {
                 var publikasi = "";
             }
             console.log(publikasi);
         });
-
-        function hideAllResponses() {
-            var divs = document.getElementById('frm-publikasi');
-            for (var i = divs.length; i--;) {
-                var div = divs[i];
-                console.log(div);
-
-                if (div.id === 'frm-publikasi') {
-                    div.style.display = 'none';
-                }
-            }
-        }
     </script>
     <?php
     ?>
