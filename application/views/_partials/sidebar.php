@@ -21,7 +21,7 @@
           </li>
           <li class=" nav-item"><a href="<?php echo base_url();?>index.html"><i class="ft-book"></i><span class="menu-title" data-i18n="">Bidang A</span></a>
             <ul class="menu-content">
-              <li class="active"><a class="menu-item" href="<?php echo base_url();?>index.php/BidangA">Form Input</a>
+              <li><a class="menu-item" href="<?php echo base_url();?>index.php/BidangA">Form Input</a>
               </li>
               <li><a class="menu-item" href="<?php echo base_url();?>dashboard-analytics.html">Table</a>
               </li>
@@ -29,7 +29,7 @@
           </li>
           <li class=" nav-item"><a href="<?php echo base_url();?>index.html"><i class="ft-book"></i><span class="menu-title" data-i18n="">Bidang B</span></a>
             <ul class="menu-content">
-              <li class="active"><a class="menu-item" href="<?php echo base_url();?>index.php/BidangB">Form Input</a>
+              <li><a class="menu-item" href="<?php echo base_url();?>index.php/BidangB">Form Input</a>
               </li>
               <li><a class="menu-item" href="<?php echo base_url();?>dashboard-analytics.html">Table</a>
               </li>
@@ -37,7 +37,7 @@
           </li>
           <li class=" nav-item"><a href="<?php echo base_url();?>index.html"><i class="ft-book"></i><span class="menu-title" data-i18n="">Bidang C</span></a>
             <ul class="menu-content">
-              <li class="active"><a class="menu-item" href="<?php echo base_url();?>index.php/BidangC">Form Input</a>
+              <li><a class="menu-item" href="<?php echo base_url();?>index.php/BidangC">Form Input</a>
               </li>
               <li><a class="menu-item" href="<?php echo base_url();?>dashboard-analytics.html">Table</a>
               </li>
@@ -45,7 +45,7 @@
           </li>
           <li class=" nav-item"><a href="<?php echo base_url();?>index.html"><i class="ft-book"></i><span class="menu-title" data-i18n="">Bidang D</span></a>
             <ul class="menu-content">
-              <li class="active"><a class="menu-item" href="<?php echo base_url();?>index.php/BidangD">Form Input</a>
+              <li><a class="menu-item" href="<?php echo base_url();?>index.php/BidangD">Form Input</a>
               </li>
               <li><a class="menu-item" href="<?php echo base_url();?>dashboard-analytics.html">Table</a>
               </li>

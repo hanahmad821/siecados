@@ -81,6 +81,9 @@
                                             <div class="form-group col-md-12 mb-2">
                                                 <!-- <input type="text" class="form-control" placeholder="Kode Matkul" name="first"> -->
                                                 <select id="kode_mk" name="kode_mk" class="form-control">
+                                                    <?php foreach ($kode_mk as $mk) { ?>
+                                                        <option value="<?php echo $mk['mata_kuliah']; ?>"><?php echo $mk['mata_kuliah']; ?> </option>
+                                                    <?php } ?>
                                                     <option value="none" selected="" disabled="">Kode Matkul</option>
                                                     <option value="ISYS6327035">ISYS6327035 - Thesis (lanjut)</option>
                                                     <option value="ISYS6296038">ISYS6296038 - Information Systems Concept</option>
