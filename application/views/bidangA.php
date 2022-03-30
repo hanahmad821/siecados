@@ -107,32 +107,27 @@
                                                     <input type="text" class="form-control" name="dosen1" placeholder="Nama Dosen" disabled>
                                                 </div>
                                                 <div class="form-group">
-                                                    <label for="author">Sebagai dosen tunggal?</label>
-                                                    <div class="row skin skin-flat" style="margin-left: initial;">
-                                                        <div>
-                                                            <fieldset>
-                                                                <input name="author" type="radio" name="input-radio-4" id="input-radio-15" value="yes">
-                                                                <label for="input-radio-15">Yes</label>
-                                                            </fieldset>
-                                                            <fieldset>
-                                                                <input name="author" type="radio" name="input-radio-4" id="input-radio-15" value="no">
-                                                                <label for="input-radio-16">No</label>
-                                                            </fieldset>
-                                                        </div>
+                                                    <label>Sebagai dosen tunggal?</label>
+                                                    <!-- <div class="row skin skin-flat" style="margin-left: initial;"> -->
+                                                    <div>
+                                                        <label class="radio-inline">
+                                                            <input type="radio" name="dosen2" id="dosen2-yes" value="yes"> Yes</label>
+                                                        <label class="radio-inline">
+                                                            <input type="radio" name="dosen2" id="dosen2-no" value="no"> No</label>
+                                                        <!-- </div> -->
                                                     </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <!-- <input type="text" class="form-control" placeholder="Kode Matkul" name="first"> -->
-                                                    <label for="dosen2">Dosen 2</label>
-                                                    <select id="dosen2" name="dosen2" class="form-control">
-                                                        <option value="none" selected="" disabled="">Dosen 2</option>
-                                                        <option value="ISYS6327035">D4567 - Titan, S.Kom ., MMSI.</option>
-                                                        <option value="ISYS6296038">D5001 - Hendro, S.Kom., M.M</option>
-                                                        <option value="ISYS6299035">D5088 - Dr. Feri Sulianta, S.T., M.T.I</option>
-                                                        <option value="ISYS6300035">ISYS6300035 - Enterprise Systems</option>
-                                                        <option value="ISYS6305035">ISYS6305035 - Data and Information Management</option>
-                                                    </select>
-                                                </div>
+                                                    <div class="form-group" id="pilih-dosen2" style="display: none;">
+                                                        <!-- <input type="text" class="form-control" placeholder="Kode Matkul" name="first"> -->
+                                                        <label for="dosen2">Dosen 2</label>
+                                                        <select id="dosen2" name="dosen2" class="form-control">
+                                                            <option value="none" selected="" disabled="">Dosen 2</option>
+                                                            <option value="ISYS6327035">D4567 - Titan, S.Kom ., MMSI.</option>
+                                                            <option value="ISYS6296038">D5001 - Hendro, S.Kom., M.M</option>
+                                                            <option value="ISYS6299035">D5088 - Dr. Feri Sulianta, S.T., M.T.I</option>
+                                                            <option value="ISYS6300035">ISYS6300035 - Enterprise Systems</option>
+                                                            <option value="ISYS6305035">ISYS6305035 - Data and Information Management</option>
+                                                        </select>
+                                                    </div>
                                             </form>
                                         </div>
                                     </div>
@@ -152,31 +147,18 @@
         <?php $this->load->view("_partials/footer.php") ?>
     </footer>
     <script>
-        var publikasi = "";
-        var x = document.getElementById("int-journal");
-        var y = document.getElementById("nas-journal");
-        var z = document.getElementById("int-con");
-
-        $('#publikasi').change(function() {
-            if ($(this).val() == 'International Journal') {
-                var publikasi = "International Journal";
-                x.style.display = "contents";
-                y.style.display = "none";
-                z.style.display = "none";
-            } else if ($(this).val() == 'Nasional Journal') {
-                var publikasi = "Nasional Journal";
+        // var dosen23 = "";
+        var x = document.getElementById("pilih-dosen2");
+        $('input[type="radio"]').change(function() {
+            if ($(this).val() == 'yes') {
                 x.style.display = "none";
-                y.style.display = "contents";
-                z.style.display = "none";
-            } else if ($(this).val() == 'International Conference') {
-                var publikasi = "International Conference";
-                x.style.display = "none";
-                y.style.display = "none";
-                z.style.display = "contents";
+                // var dosen23 = "International Journal";
             } else {
-                var publikasi = "";
+                x.style.display = "contents";
+                // var dosen23 = "International Jsssssournal";
             }
-            console.log(publikasi);
+            console.log(dosen23);
+
         });
     </script>
 </body>
