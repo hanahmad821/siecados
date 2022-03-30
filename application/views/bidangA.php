@@ -151,20 +151,6 @@
     <footer class="footer footer-static footer-light navbar-border navbar-shadow">
         <?php $this->load->view("_partials/footer.php") ?>
     </footer>
-
-    <!-- BEGIN VENDOR JS-->
-    <script src="<?php echo base_url(); ?>app-assets/vendors/js/vendors.min.js" type="text/javascript"></script>
-    <!-- BEGIN VENDOR JS-->
-    <!-- BEGIN PAGE VENDOR JS-->
-    <script src="<?php echo base_url(); ?>app-assets/vendors/js/forms/repeater/jquery.repeater.min.js" type="text/javascript"></script>
-    <!-- END PAGE VENDOR JS-->
-    <!-- BEGIN CHAMELEON  JS-->
-    <script src="<?php echo base_url(); ?>app-assets/js/core/app-menu.js" type="text/javascript"></script>
-    <script src="<?php echo base_url(); ?>app-assets/js/core/app.js" type="text/javascript"></script>
-    <!-- END CHAMELEON  JS-->
-    <!-- BEGIN PAGE LEVEL JS-->
-    <script src="<?php echo base_url(); ?>app-assets/js/scripts/forms/form-repeater.js" type="text/javascript"></script>
-    <!-- END PAGE LEVEL JS-->
     <script>
         var publikasi = "";
         var x = document.getElementById("int-journal");
