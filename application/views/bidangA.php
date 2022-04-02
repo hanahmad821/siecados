@@ -76,22 +76,18 @@
                                 <div class="card-content collapse show">
                                     <div class="card-body">
                                         <div class="col-md-12">
-                                            <form class="form">
+                                            <form class="form" action="" method="post">
                                                 <!-- <label class="col-md-2 label-control" for="projectinput5">Kode Matkul</label> -->
                                                 <div class="form-group">
                                                     <!-- <input type="text" class="form-control" placeholder="Kode Matkul" name="first"> -->
                                                     <label for="kode_mk">Mata Kuliah</label>
 
                                                     <select id="kode_mk" name="kode_mk" class="form-control">
-                                                        <?php foreach ($kode_mk as $mk) { ?>
-                                                            <option value="<?php echo $mk['mata_kuliah']; ?>"><?php echo $mk['mata_kuliah']; ?> </option>
-                                                        <?php } ?>
+
                                                         <option value="none" selected="" disabled="">Kode Matkul</option>
-                                                        <option value="ISYS6327035">ISYS6327035 - Thesis (lanjut)</option>
-                                                        <option value="ISYS6296038">ISYS6296038 - Information Systems Concept</option>
-                                                        <option value="ISYS6299035">ISYS6299035 - Business Process Fundamental</option>
-                                                        <option value="ISYS6300035">ISYS6300035 - Enterprise Systems</option>
-                                                        <option value="ISYS6305035">ISYS6305035 - Data and Information Management</option>
+                                                        <?php foreach ($matkul as $mk) { ?>
+                                                            <option value="<?php echo $mk->kode_matkul . " - " . $mk->nama_matkul; ?>"><?php echo $mk->kode_matkul . " - " . $mk->nama_matkul; ?> </option>
+                                                        <?php } ?>
                                                     </select>
                                                 </div>
                                                 <div class="form-group">
@@ -110,10 +106,14 @@
                                                     <label>Sebagai dosen tunggal?</label>
                                                     <!-- <div class="row skin skin-flat" style="margin-left: initial;"> -->
                                                     <div>
-                                                        <label class="radio-inline">
-                                                            <input type="radio" name="dosen2" id="dosen2-yes" value="yes"> Yes</label>
-                                                        <label class="radio-inline">
-                                                            <input type="radio" name="dosen2" id="dosen2-no" value="no"> No</label>
+                                                        <fieldset>
+                                                            <label class="radio-inline">
+                                                                <input type="radio" name="dosen2" id="dosen2-yes" value="yes"> Yes</label>
+                                                        </fieldset>
+                                                        <fieldset>
+                                                            <label class="radio-inline">
+                                                                <input type="radio" name="dosen2" id="dosen2-no" value="no"> No</label>
+                                                        </fieldset>
                                                         <!-- </div> -->
                                                     </div>
                                                     <div class="form-group" id="pilih-dosen2" style="display: none;">
@@ -121,12 +121,18 @@
                                                         <label for="dosen2">Dosen 2</label>
                                                         <select id="dosen2" name="dosen2" class="form-control">
                                                             <option value="none" selected="" disabled="">Dosen 2</option>
-                                                            <option value="ISYS6327035">D4567 - Titan, S.Kom ., MMSI.</option>
-                                                            <option value="ISYS6296038">D5001 - Hendro, S.Kom., M.M</option>
-                                                            <option value="ISYS6299035">D5088 - Dr. Feri Sulianta, S.T., M.T.I</option>
-                                                            <option value="ISYS6300035">ISYS6300035 - Enterprise Systems</option>
-                                                            <option value="ISYS6305035">ISYS6305035 - Data and Information Management</option>
+                                                            <?php foreach ($dosen2 as $dosen) { ?>
+                                                                <option value="<?php echo $dosen->kode_dosen . " - " . $dosen->nama_dosen; ?>"><?php echo $dosen->kode_dosen . " - " . $dosen->nama_dosen; ?> </option>
+                                                            <?php } ?>
                                                         </select>
+                                                    </div>
+                                                    <div class="form-actions">
+                                                        <button type="button" class="btn btn-danger mr-1">
+                                                            <i class="ft-x"></i> Cancel
+                                                        </button>
+                                                        <button type="submit" class="btn btn-primary">
+                                                            <i class="la la-check-square-o"></i> Save
+                                                        </button>
                                                     </div>
                                             </form>
                                         </div>

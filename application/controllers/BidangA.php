@@ -18,8 +18,15 @@ class BidangA extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
+	public function __construct()
+	{
+        parent::__construct();
+        $this->load->model('M_bidangA');
+	}
 	public function index()
 	{
-		$this->load->view('bidangA');
+		$data['matkul'] = $this->M_bidangA->get_matkul();
+		$data['dosen2'] = $this->M_bidangA->get_dosen2();
+		$this->load->view('bidangA',$data);
 	}
 }
