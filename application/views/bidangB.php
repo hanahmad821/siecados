@@ -437,7 +437,6 @@
     </script>
     <?php
     ?>
-    <script src="<?php echo base_url(); ?>app-assets/js/scripts/pickers/dateTime/pick-a-datetime.js" type="text/javascript"></script>
 
 </body>
 
