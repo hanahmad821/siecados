@@ -53,11 +53,11 @@
           </li>
           <li class=" nav-item"><a href="<?php echo base_url();?>index.html"><i class="ft-book"></i><span class="menu-title" data-i18n="">Admin</span></a>
             <ul class="menu-content">
-              <li><a class="menu-item" href="<?php echo base_url();?>User">User</a>
+              <li><a class="menu-item" href="<?php echo base_url();?>admin/User">User</a>
               </li>
-              <li><a class="menu-item" href="<?php echo base_url();?>Matkul">Matkul</a>
+              <li><a class="menu-item" href="<?php echo base_url();?>admin/Matkul">Matkul</a>
               </li>
-              <li><a class="menu-item" href="<?php echo base_url();?>Periode">Periode</a>
+              <li><a class="menu-item" href="<?php echo base_url();?>admin/Periode">Periode</a>
               </li>
             </ul>
           </li>
