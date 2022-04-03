@@ -355,6 +355,32 @@
                                                             </div>
                                                         </div>
                                                         <div class="form-group">
+                                                            <label>Disable picker for native calendar</label>
+                                                            <div class="row">
+                                                                <div class="col-lg-12 mb-1">
+                                                                    <div class="input-group">
+                                                                        <div class="input-group-prepend">
+                                                                            <span class="input-group-text">
+                                                                                <span class="la la-calendar-o"></span>
+                                                                            </span>
+                                                                        </div>
+                                                                        <input id="picker_from" class="form-control datepicker" type="date">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-lg-12">
+                                                                    <div class="input-group">
+                                                                        <div class="input-group-prepend">
+                                                                            <span class="input-group-text">
+                                                                                <span class="la la-calendar-o"></span>
+                                                                            </span>
+                                                                        </div>
+                                                                        <input id="picker_to" class="form-control datepicker" type="date">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <small class="text-muted">Use <code>.pickadate-nativ</code> class to change date display formats. </small>
+                                                        </div>
+                                                        <div class="form-group">
                                                             <label for="penyelenggara">Penyelenggara</label>
                                                             <input class="form-control border-primary" type="text" placeholder="Penyelenggara" name="penyelenggara">
                                                         </div>
