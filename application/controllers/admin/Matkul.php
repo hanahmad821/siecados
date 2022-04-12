@@ -21,12 +21,16 @@ class Matkul extends CI_Controller {
 	public function __construct()
 	{
         parent::__construct();
-        $this->load->model('M_bidangA');
+        $this->load->model('M_tmatkul');
 	}
 	public function index()
 	{
-		$data['matkul'] = $this->M_bidangA->get_matkul();
-		$data['dosen2'] = $this->M_bidangA->get_dosen2();
-		$this->load->view('bidangA',$data);
+		$this->load->view('input_matkul');
+	}
+
+	function t_matkul(){
+		$data['matkul'] = $this->M_tmatkul->get_matkul();
+		$this->load->view('t_matkul',$data);
+
 	}
 }

@@ -18,6 +18,14 @@
 <script src="<?php echo base_url(); ?>app-assets/vendors/js/pickers/pickadate/legacy.js" type="text/javascript"></script>
 <script src="<?php echo base_url(); ?>app-assets/vendors/js/pickers/dateTime/moment-with-locales.min.js" type="text/javascript"></script>
 <script src="<?php echo base_url(); ?>app-assets/vendors/js/pickers/daterange/daterangepicker.js" type="text/javascript"></script>
+<script src="<?php echo base_url(); ?>app-assets/vendors/js/tables/datatable/datatables.min.js" type="text/javascript"></script>
+<script src="<?php echo base_url(); ?>app-assets/vendors/js/tables/datatable/dataTables.buttons.min.js" type="text/javascript"></script>
+<script src="<?php echo base_url(); ?>app-assets/vendors/js/tables/buttons.flash.min.js" type="text/javascript"></script>
+<script src="<?php echo base_url(); ?>app-assets/vendors/js/tables/jszip.min.js" type="text/javascript"></script>
+<script src="<?php echo base_url(); ?>app-assets/vendors/js/tables/pdfmake.min.js" type="text/javascript"></script>
+<script src="<?php echo base_url(); ?>app-assets/vendors/js/tables/vfs_fonts.js" type="text/javascript"></script>
+<script src="<?php echo base_url(); ?>app-assets/vendors/js/tables/buttons.html5.min.js" type="text/javascript"></script>
+<script src="<?php echo base_url(); ?>app-assets/vendors/js/tables/buttons.print.min.js" type="text/javascript"></script>
 <!-- END PAGE VENDOR JS-->
 <!-- BEGIN CHAMELEON  JS-->
 <script src="<?php echo base_url(); ?>app-assets/js/core/app-menu.js" type="text/javascript"></script>
@@ -25,6 +33,8 @@
 <!-- END CHAMELEON  JS-->
 <!-- BEGIN PAGE LEVEL JS-->
 <script src="<?php echo base_url(); ?>app-assets/js/scripts/forms/form-repeater.js" type="text/javascript"></script>
-    <script src="<?php echo base_url(); ?>app-assets/js/scripts/forms/checkbox-radio.js" type="text/javascript"></script>
-    <script src="<?php echo base_url(); ?>app-assets/js/scripts/pickers/dateTime/pick-a-datetime.js" type="text/javascript"></script>
+<script src="<?php echo base_url(); ?>app-assets/js/scripts/forms/checkbox-radio.js" type="text/javascript"></script>
+<script src="<?php echo base_url(); ?>app-assets/js/scripts/pickers/dateTime/pick-a-datetime.js" type="text/javascript"></script>
+<script src="<?php echo base_url(); ?>app-assets/js/scripts/tables/datatables/datatable-advanced.js" type="text/javascript"></script>
+
 <!-- END PAGE LEVEL JS-->

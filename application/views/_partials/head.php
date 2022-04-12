@@ -23,6 +23,8 @@
 <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>app-assets/vendors/css/pickers/pickadate/default.css">
 <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>app-assets/vendors/css/pickers/pickadate/default.date.css">
 <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>app-assets/vendors/css/pickers/pickadate/default.time.css">
+<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>app-assets/vendors/css/tables/datatable/datatables.min.css">
+
 
 <!-- END VENDOR CSS-->
 <!-- BEGIN CHAMELEON  CSS-->
