@@ -43,7 +43,7 @@
                         <div class="col-12">
                             <div class="card">
                                 <div class="card-header">
-                                    <h4 class="card-title">File export</h4>
+                                    <h4 class="card-title">Mata Kuliah</h4>
                                     <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
                                     <div class="heading-elements">
                                         <ul class="list-inline mb-0">
@@ -56,7 +56,7 @@
                                 </div>
                                 <div class="card-content collapse show">
                                     <div class="card-body card-dashboard">
-                                        <p class="card-text">Exporting data from a table can often be a key part of a complex application. The Buttons extension for DataTables provides three plug-ins that provide overlapping functionality for data export.</p>
+                                        <a href="<?php echo site_url('admin/matkul/add') ?>" class="btn btn-info btn-md"><i class="ft-file-plus"></i> Add New</a>
                                         <table class="table table-striped table-bordered file-export">
                                             <thead>
                                                 <tr>
@@ -68,20 +68,18 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <?php
-                                                foreach ($matkul as $mk) { ?>
+                                                <?php foreach ($matkul as $mk) : ?>
                                                     <tr>
                                                         <td><?php echo $mk->kode_matkul; ?></td>
                                                         <td><?php echo $mk->nama_matkul; ?></td>
                                                         <td><?php echo $mk->sks; ?></td>
                                                         <td><?php echo $mk->aktif; ?></td>
                                                         <td align="center">
-                                                            <button class="btn btn-primary btn-sm"><i class="la la-edit"></i></button>
-                                                            <button class="btn btn-danger btn-sm"><i class="la la-trash"></i></button>
+                                                            <a href="<?php echo site_url('admin/matkul/edit/' . $mk->id_matkul) ?>" class="btn btn-primary btn-sm"><i class="la la-edit"></i></a>
+                                                            <a onclick="deleteConfirm('<?php echo site_url('admin/matkul/delete/' . $mk->id_matkul) ?>')" href="#!" class="btn btn-danger btn-sm"><i class="la la-trash"></i></a>
                                                         </td>
                                                     </tr>
-                                                <?php
-                                                } ?>
+                                                <?php endforeach; ?>
                                             </tbody>
                                             <tfoot>
                                                 <tr>
@@ -108,7 +106,14 @@
     <footer class="footer footer-static footer-light navbar-border navbar-shadow">
         <?php $this->load->view("_partials/footer.php") ?>
     </footer>
+    <script>
+        function deleteConfirm(url) {
+            $('#btn-delete').attr('href', url);
+            $('#deleteModal').modal();
+        }
+    </script>
 
+    <?php $this->load->view("_partials/modal.php") ?>
 </body>
 
 </html>

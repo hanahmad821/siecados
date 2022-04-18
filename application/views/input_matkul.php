@@ -20,14 +20,14 @@
         <div class="content-wrapper">
             <div class="content-wrapper-before"></div>
             <div class="content-header row">
-                <div class="content-header-left col-md-8 col-12 mb-2 breadcrumb-new">
-                    <h3 class="content-header-title mb-0 d-inline-block">Form Imput Matkul</h3>
+                <div class="content-header-left col-md-8 col-12 mb-2 breadcrumb-new">   
+                    <h3 class="content-header-title mb-0 d-inline-block">Form Input Matkul</h3>
                     <div class="row breadcrumbs-top d-inline-block">
                         <div class="breadcrumb-wrapper mr-1">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="<?php echo base_url(); ?>index.html">Home</a>
                                 </li>
-                                <li class="breadcrumb-item"><a href="<?php echo base_url(); ?>#">Imput Matkul</a>
+                                <li class="breadcrumb-item"><a href="#">Imput Matkul</a>
                                 </li>
                                 <li class="breadcrumb-item active">Form Input
                                 </li>
@@ -76,7 +76,7 @@
                                 <div class="card-content collapse show">
                                     <div class="card-body">
                                         <div class="col-md-12">
-                                            <form class="form" action="" method="post">
+                                            <form class="form" action="<?php echo base_url(); ?>index.php/Matkul/input" method="post">
                                                 <div class="form-group">
                                                     <label for="kode_matkul">Kode Mata Kuliah</label>
                                                     <input type="text" class="form-control" placeholder="Kode Mata Kuliah" name="kode_matkul">
