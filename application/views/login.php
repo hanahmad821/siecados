@@ -55,15 +55,15 @@ defined('BASEPATH') or exit('No direct script access allowed');
                                 <div class="card-content">
 
                                     <div class="card-body">
-                                        <form class="form-horizontal" action="index.html" novalidate>
+                                        <form class="form-horizontal" action='login/aksi_login' method="POST" novalidate>
                                             <fieldset class="form-group position-relative has-icon-left">
-                                                <input type="text" class="form-control round" id="user-name" placeholder="Your Username" required>
+                                                <input type="text" class="form-control round" name = "username" id="user-name" placeholder="Kode Dosen" required>
                                                 <div class="form-control-position">
                                                     <i class="ft-user"></i>
                                                 </div>
                                             </fieldset>
                                             <fieldset class="form-group position-relative has-icon-left">
-                                                <input type="password" class="form-control round" id="user-password" placeholder="Enter Password" required>
+                                                <input type="password" class="form-control round" name = 'password' id="user-password" placeholder="Enter Password" required>
                                                 <div class="form-control-position">
                                                     <i class="ft-lock"></i>
                                                 </div>

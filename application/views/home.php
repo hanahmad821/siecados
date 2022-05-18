@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html class="loading" lang="en" data-textdirection="ltr">
-  <head>
-  <?php $this->load->view("_partials/head.php") ?>
-  </head>
-  <body class="vertical-layout vertical-menu-modern 2-columns   menu-expanded fixed-navbar" data-open="click" data-menu="vertical-menu-modern" data-color="bg-chartbg" data-col="2-columns">
 
-  <?php $this->load->view("_partials/navbar.php") ?>
+<head>
+    <?php $this->load->view("_partials/head.php") ?>
+</head>
 
+<body class="vertical-layout vertical-menu-modern 2-columns   menu-expanded fixed-navbar" data-open="click" data-menu="vertical-menu-modern" data-color="bg-chartbg" data-col="2-columns">
+
+    <?php $this->load->view("_partials/navbar.php") ?>
 
     <!-- ////////////////////////////////////////////////////////////////////////////-->
 
@@ -325,7 +326,7 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td class="text-truncate border-0"><input type="checkbox" class="chk-task"></td>                                    
+                                    <td class="text-truncate border-0"><input type="checkbox" class="chk-task"></td>
                                     <td class="text-truncate border-0 pl-0">
                                         <span class="list-group-item-heading">Curabitur tempor, quam vel finibus.</span>
                                     </td>
@@ -344,7 +345,7 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td class="text-truncate border-0"><input type="checkbox" class="chk-task"></td>                                    
+                                    <td class="text-truncate border-0"><input type="checkbox" class="chk-task"></td>
                                     <td class="text-truncate border-0 pl-0">
                                         <span class="list-group-item-heading text-decoration">Donec pulvinar nisi ac convallis porta.</span>
                                     </td>
@@ -360,7 +361,7 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td class="text-truncate border-0"><input type="checkbox" class="chk-task"></td>                                   
+                                    <td class="text-truncate border-0"><input type="checkbox" class="chk-task"></td>
                                     <td class="text-truncate border-0 pl-0">
                                         <span class="list-group-item-heading">Aliquam finibus tellus magna.</span>
                                     </td>
