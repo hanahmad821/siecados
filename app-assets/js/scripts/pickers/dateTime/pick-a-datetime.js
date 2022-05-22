@@ -46,8 +46,8 @@
 	// Format options
 	$('.pickadate-format').pickadate({
 		// Escape any 'rule' characters with an exclamation mark (!).
-		format: 'Selecte!d Date : dddd, dd mmmm, yyyy',
-		formatSubmit: 'mm/dd/yyyy',
+		format: 'dddd, dd mmmm, yyyy',
+		formatSubmit: 'yyyy/mm/dd',
 		hiddenPrefix: 'prefix__',
 		hiddenSuffix: '__suffix'
 	});

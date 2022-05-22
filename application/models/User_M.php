@@ -105,8 +105,12 @@ class User_M extends CI_Model
 		return [
 			[
 				'field' => 'kode_dosen',
-				'label' => 'Kode user',
-				'rules' => 'required|is_unique[p_dosen.kode_dosen]'
+				'label' => 'Kode User',
+				'rules' => 'required|is_unique[p_dosen.kode_dosen]',
+				'errors' => [
+					'required' => '{field} harus diisi.',
+					'is_unique' => '{field} sudah ada.',
+				]
 			],
 			[
 				'field' => 'nama_dosen',

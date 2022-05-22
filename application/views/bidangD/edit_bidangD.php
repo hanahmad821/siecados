@@ -27,7 +27,7 @@
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="<?php echo base_url(); ?>index.html">Home</a>
                                 </li>
-                                <li class="breadcrumb-item"><a href="<?php echo base_url(); ?>BidangA">Bidang A</a>
+                                <li class="breadcrumb-item"><a href="<?php echo base_url(); ?>#">Bidang A</a>
                                 </li>
                                 <li class="breadcrumb-item active">Form Input
                                 </li>
@@ -82,23 +82,23 @@
                                     <div class="card-body">
                                         <div class="col-md-12">
                                             <form class="form" action="" method="post">
-                                            <input type="text" name="id_bidangA" value="<?php echo $bidangA->id_bidang_a ?>"  hidden = "hidden"/>
+                                            <input type="text" name="id_BidangD" value="<?php echo $BidangD->id_bidang_a ?>"  hidden = "hidden"/>
                                                 <div class="form-group">
                                                     <label for="kode_matkul">Mata Kuliah</label>
                                                     <select id="kode_matkul" name="kode_matkul" class="form-control <?php echo form_error('kode_matkul') ? 'is-invalid' : '' ?>">
                                                         <option value="none" selected="" disabled="">Kode Matkul</option>
                                                         <?php foreach ($matkul as $row) : ?>
-                                                            <option value="<?php echo $row->kode_matkul; ?>"<?php if($bidangA->kode_matkul == $row->kode_matkul) echo 'selected = "selected"'; ?>><?php echo $row->kode_matkul . " - " . $row->nama_matkul; ?> </option>
+                                                            <option value="<?php echo $row->kode_matkul; ?>"<?php if($BidangD->kode_matkul == $row->kode_matkul) echo 'selected = "selected"'; ?>><?php echo $row->kode_matkul . " - " . $row->nama_matkul; ?> </option>
                                                         <?php endforeach; ?>
                                                     </select>
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="kelas">Kelas</label>
-                                                    <input type="text" class="form-control <?php echo form_error('kelas') ? 'is-invalid' : '' ?>" placeholder="Kelas" name="kelas" value="<?php echo $bidangA->kelas; ?>">
+                                                    <input type="text" class="form-control <?php echo form_error('kelas') ? 'is-invalid' : '' ?>" placeholder="Kelas" name="kelas" value="<?php echo $BidangD->kelas; ?>">
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="sks">Jumlah SKS</label>
-                                                    <input type="number" class="form-control <?php echo form_error('sks') ? 'is-invalid' : '' ?>" placeholder="SKS" name="sks" value="<?php echo $bidangA->sks; ?>">
+                                                    <input type="number" class="form-control <?php echo form_error('sks') ? 'is-invalid' : '' ?>" placeholder="SKS" name="sks" value="<?php echo $BidangD->sks; ?>">
                                                 </div>
                                                 <div class="form-group">
                                                     <div class="row">
@@ -131,12 +131,12 @@
                                                         <select id="kode_dosen2" name="kode_dosen2" class="form-control <?php echo form_error('kode_dosen2') ? 'is-invalid' : '' ?>">
                                                             <option value="none" selected="" disabled="">Dosen 2</option>
                                                             <?php foreach ($dosen2 as $row) { ?>
-                                                                <option value="<?php echo $row->kode_dosen; ?>" <?php if($bidangA->kode_dosen_2 == $row->kode_dosen) echo 'selected = "selected"'; ?>><?php echo $row->kode_dosen . " - " . $row->nama_dosen; ?> </option>
+                                                                <option value="<?php echo $row->kode_dosen; ?>" <?php if($BidangD->kode_dosen_2 == $row->kode_dosen) echo 'selected = "selected"'; ?>><?php echo $row->kode_dosen . " - " . $row->nama_dosen; ?> </option>
                                                             <?php } ?>
                                                         </select>
                                                     </div>
                                                     <div class="form-actions">
-                                                        <a href="<?php echo site_url('BidangA/') ?>" type="button" class="btn btn-danger mr-1">
+                                                        <a href="<?php echo site_url('BidangD/') ?>" type="button" class="btn btn-danger mr-1">
                                                             <i class="ft-x"></i> Cancel
                                                         </a>
                                                         <button type="submit" class="btn btn-primary" name="btn" value="Save">

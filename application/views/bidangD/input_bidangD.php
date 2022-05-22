@@ -21,13 +21,13 @@
             <div class="content-wrapper-before"></div>
             <div class="content-header row">
                 <div class="content-header-left col-md-8 col-12 mb-2 breadcrumb-new">
-                    <h3 class="content-header-title mb-0 d-inline-block">Form Bidang A</h3>
+                    <h3 class="content-header-title mb-0 d-inline-block">Form Bidang D</h3>
                     <div class="row breadcrumbs-top d-inline-block">
                         <div class="breadcrumb-wrapper mr-1">
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="<?php echo base_url(); ?>index.html">Home</a>
                                 </li>
-                                <li class="breadcrumb-item"><a href="<?php echo base_url(); ?>BidangA">Bidang A</a>
+                                <li class="breadcrumb-item"><a href="<?php echo base_url(); ?>bidangD">Bidang D</a>
                                 </li>
                                 <li class="breadcrumb-item active">Form Input
                                 </li>
@@ -81,30 +81,12 @@
                                 <div class="card-content collapse show">
                                     <div class="card-body">
                                         <div class="col-md-12">
-                                            <form class="form" action="" method="post">
-                                            <input type="text" name="id_bidangA" value="<?php echo $bidangA->id_bidang_a ?>"  hidden = "hidden"/>
-                                                <div class="form-group">
-                                                    <label for="kode_matkul">Mata Kuliah</label>
-                                                    <select id="kode_matkul" name="kode_matkul" class="form-control <?php echo form_error('kode_matkul') ? 'is-invalid' : '' ?>">
-                                                        <option value="none" selected="" disabled="">Kode Matkul</option>
-                                                        <?php foreach ($matkul as $row) : ?>
-                                                            <option value="<?php echo $row->kode_matkul; ?>"<?php if($bidangA->kode_matkul == $row->kode_matkul) echo 'selected = "selected"'; ?>><?php echo $row->kode_matkul . " - " . $row->nama_matkul; ?> </option>
-                                                        <?php endforeach; ?>
-                                                    </select>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label for="kelas">Kelas</label>
-                                                    <input type="text" class="form-control <?php echo form_error('kelas') ? 'is-invalid' : '' ?>" placeholder="Kelas" name="kelas" value="<?php echo $bidangA->kelas; ?>">
-                                                </div>
-                                                <div class="form-group">
-                                                    <label for="sks">Jumlah SKS</label>
-                                                    <input type="number" class="form-control <?php echo form_error('sks') ? 'is-invalid' : '' ?>" placeholder="SKS" name="sks" value="<?php echo $bidangA->sks; ?>">
-                                                </div>
+                                            <form class="form" action="<?php echo base_url(); ?>BidangD/add" method="post" enctype="multipart/form-data">
                                                 <div class="form-group">
                                                     <div class="row">
                                                         <div class="form-group col-md-6">
-                                                            <label for="kode_dosen1">Kode Dosen</label>
-                                                            <input class="form-control <?php echo form_error('kode_dosen1') ? 'is-invalid' : '' ?> border-primary" type="text" name="kode_dosen1" value="<?php echo $dosen1->kode_dosen ?>" placeholder="KODE DOSEN" readonly="readonly">
+                                                            <label for="kode_dosen">Kode Dosen</label>
+                                                            <input class="form-control <?php echo form_error('kode_dosen') ? 'is-invalid' : '' ?> border-primary" type="text" name="kode_dosen" value="<?php echo $dosen1->kode_dosen ?>" placeholder="KODE DOSEN" readonly="readonly">
                                                         </div>
                                                         <div class="form-group col-md-6">
                                                             <label for="nama_dosen1">Nama Dosen</label>
@@ -113,36 +95,53 @@
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
-                                                    <label>Sebagai dosen tunggal?</label>
-                                                    <!-- <div class="row skin skin-flat" style="margin-left: initial;"> -->
-                                                    <div>
-                                                        <fieldset>
-                                                            <label class="radio-inline">
-                                                                <input type="radio" name="select_dosen" id="dosen2-yes" value="yes"> Yes</label>
-                                                        </fieldset>
-                                                        <fieldset>
-                                                            <label class="radio-inline">
-                                                                <input type="radio" name="select_dosen" id="dosen2-no" value="no"> No</label>
-                                                        </fieldset>
-                                                        <!-- </div> -->
+                                                    <label for="nama_kegiatan">Nama Kegiatan</label>
+                                                    <input type="text" class="form-control <?php echo form_error('nama_kegiatan') ? 'is-invalid' : '' ?>" placeholder="Nama Kegiatan" name="nama_kegiatan">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="tempat_pelaksanaan">Tempat Pelaksanaan</label>
+                                                    <input type="text" class="form-control <?php echo form_error('tempat_pelaksanaan') ? 'is-invalid' : '' ?>" placeholder="Tempat Pelaksanaan" name="tempat_pelaksanaan">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>Waktu Pelaksanaan</label>
+                                                    <div class="input-group">
+                                                        <div class="input-group-prepend">
+                                                            <span class="input-group-text">
+                                                                <span class="la la-calendar-o"></span>
+                                                            </span>
+                                                        </div>
+                                                        <input type='text' class="form-control pickadate" placeholder="Basic Pick-a-date" name="waktu_pelaksanaan" />
                                                     </div>
-                                                    <div class="form-group" id="pilih-dosen2" style="display: none;">
-                                                        <label for="kode_dosen2">Dosen 2</label>
-                                                        <select id="kode_dosen2" name="kode_dosen2" class="form-control <?php echo form_error('kode_dosen2') ? 'is-invalid' : '' ?>">
-                                                            <option value="none" selected="" disabled="">Dosen 2</option>
-                                                            <?php foreach ($dosen2 as $row) { ?>
-                                                                <option value="<?php echo $row->kode_dosen; ?>" <?php if($bidangA->kode_dosen_2 == $row->kode_dosen) echo 'selected = "selected"'; ?>><?php echo $row->kode_dosen . " - " . $row->nama_dosen; ?> </option>
-                                                            <?php } ?>
-                                                        </select>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="penyelenggara">Penyelenggara</label>
+                                                    <input type="text" class="form-control <?php echo form_error('penyelenggara') ? 'is-invalid' : '' ?>" placeholder="Penyelenggara" name="penyelenggara">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="judul_materi">Judul Materi</label>
+                                                    <input type="text" class="form-control <?php echo form_error('judul_materi') ? 'is-invalid' : '' ?>" placeholder="Judul Materi" name="judul_materi">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="sertifikat">Sertifikat Peserta (PDF/PNG/JPG)</label>
+                                                    <input type="file" class="form-control form-control-file <?php echo form_error('sertifikat') ? 'is-invalid' : '' ?> border-primary" id="sertifikat" name="sertifikat" accept=".jpg, .jpeg, .png, .pdf">
+                                                    <div class="invalid-feedback">
+                                                        <?php echo form_error('sertifikat') ?>
                                                     </div>
-                                                    <div class="form-actions">
-                                                        <a href="<?php echo site_url('BidangA/') ?>" type="button" class="btn btn-danger mr-1">
-                                                            <i class="ft-x"></i> Cancel
-                                                        </a>
-                                                        <button type="submit" class="btn btn-primary" name="btn" value="Save">
-                                                            <i class="la la-check-square-o"></i> Save
-                                                        </button>
-                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="dokumentasi">Dokumentasi (PDF/PNG/JPG)</label>
+                                                    <input type="file" class="form-control form-control-file <?php echo form_error('dokumentasi') ? 'is-invalid' : '' ?> border-primary" id="dokumentasi" name="dokumentasi" accept=".jpg, .jpeg, .png, .pdf">
+                                                    <div class="invalid-feedback">
+                                                        <?php echo form_error('dokumentasi') ?>
+                                                    </div>                                                </div>
+                                                <div class="form-actions">
+                                                    <a href="<?php echo site_url('BidangD/add') ?>" type="button" class="btn btn-danger mr-1">
+                                                        <i class="ft-x"></i> Cancel
+                                                    </a>
+                                                    <button type="submit" class="btn btn-primary" name="btn" value="Save">
+                                                        <i class="la la-check-square-o"></i> Save
+                                                    </button>
+                                                </div>
                                             </form>
                                         </div>
                                     </div>

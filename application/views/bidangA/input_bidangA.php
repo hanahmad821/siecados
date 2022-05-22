@@ -114,34 +114,33 @@
                                                 <div class="form-group">
                                                     <label>Sebagai dosen tunggal?</label>
                                                     <!-- <div class="row skin skin-flat" style="margin-left: initial;"> -->
-                                                    <div>
-                                                        <fieldset>
-                                                            <label class="radio-inline">
-                                                                <input type="radio" name="select_dosen" id="dosen2-yes" value="yes"> Yes</label>
-                                                        </fieldset>
-                                                        <fieldset>
-                                                            <label class="radio-inline">
-                                                                <input type="radio" name="select_dosen" id="dosen2-no" value="no"> No</label>
-                                                        </fieldset>
-                                                        <!-- </div> -->
-                                                    </div>
-                                                    <div class="form-group" id="pilih-dosen2" style="display: none;">
-                                                        <label for="kode_dosen2">Dosen 2</label>
-                                                        <select id="kode_dosen2" name="kode_dosen2" class="form-control <?php echo form_error('kode_dosen2') ? 'is-invalid' : '' ?>">
-                                                            <option value="none" selected="" disabled="">Dosen 2</option>
-                                                            <?php foreach ($dosen2 as $row) { ?>
-                                                                <option value="<?php echo $row->kode_dosen; ?>"><?php echo $row->kode_dosen . " - " . $row->nama_dosen; ?> </option>
-                                                            <?php } ?>
-                                                        </select>
-                                                    </div>
-                                                    <div class="form-actions">
-                                                        <a href="<?php echo site_url('BidangA/add') ?>" type="button" class="btn btn-danger mr-1">
-                                                            <i class="ft-x"></i> Cancel
-                                                        </a>
-                                                        <button type="submit" class="btn btn-primary" name="btn" value="Save">
-                                                            <i class="la la-check-square-o"></i> Save
-                                                        </button>
-                                                    </div>
+                                                    <fieldset>
+                                                        <label class="radio-inline">
+                                                            <input type="radio" name="select_dosen" id="dosen2-yes" value="yes"> Yes</label>
+                                                    </fieldset>
+                                                    <fieldset>
+                                                        <label class="radio-inline">
+                                                            <input type="radio" name="select_dosen" id="dosen2-no" value="no"> No</label>
+                                                    </fieldset>
+                                                    <!-- </div> -->
+                                                </div>
+                                                <div class="form-group" id="pilih-dosen2" style="display: none;">
+                                                    <label for="kode_dosen2">Dosen 2</label>
+                                                    <select id="kode_dosen2" name="kode_dosen2" class="form-control <?php echo form_error('kode_dosen2') ? 'is-invalid' : '' ?>">
+                                                        <option value="none" selected="" disabled="">Dosen 2</option>
+                                                        <?php foreach ($dosen2 as $row) { ?>
+                                                            <option value="<?php echo $row->kode_dosen; ?>"><?php echo $row->kode_dosen . " - " . $row->nama_dosen; ?> </option>
+                                                        <?php } ?>
+                                                    </select>
+                                                </div>
+                                                <div class="form-actions">
+                                                    <a href="<?php echo site_url('BidangA/add') ?>" type="button" class="btn btn-danger mr-1">
+                                                        <i class="ft-x"></i> Cancel
+                                                    </a>
+                                                    <button type="submit" class="btn btn-primary" name="btn" value="Save">
+                                                        <i class="la la-check-square-o"></i> Save
+                                                    </button>
+                                                </div>
                                             </form>
                                         </div>
                                     </div>

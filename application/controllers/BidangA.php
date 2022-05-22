@@ -26,7 +26,6 @@ class BidangA extends CI_Controller
 		$this->load->model('BidangA_M');
 		$this->load->library('form_validation');
 		$this->load->library('session');
-
 	}
 	public function index()
 	{
@@ -62,8 +61,6 @@ class BidangA extends CI_Controller
 		if ($validation->run()) {
 			$bidangA->update();
 			$this->session->set_flashdata('success', 'Berhasil disimpan');
-		}else{
-			print_r($bidangA->rules());
 		}
 		$data['matkul'] = $this->BidangA_M->getMatkul();
 		$data['dosen1'] = $this->BidangA_M->getDosen1();

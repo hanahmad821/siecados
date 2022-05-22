@@ -94,6 +94,16 @@ class BidangA_M extends CI_Model
 			return 1;
 		}
 	}
+	public function getMaxIdBidang()
+	{
+		$this->db->select_max('id_bidang_a', 'id_bidang_a');
+		$query = $this->db->get("t_bidang_a");
+		if ($query->num_rows() > 0) {
+			return $query->row('id_bidang_a');
+		} else {
+			return 1;
+		}
+	}
 	public function save()
 	{
 		$last_id = $this->BidangA_M->getMaxAktifitas();
@@ -107,6 +117,7 @@ class BidangA_M extends CI_Model
 		$this->sks = $post["sks"];
 		$this->kode_dosen_1 = $post["kode_dosen1"];
 		$this->kode_dosen_2 = $post["kode_dosen2"];
+
 		$sql = "INSERT INTO t_aktifitas values ('$max_id','1','3','$post[kode_dosen1]',NOW(),'insert')";
 		$this->db->query($sql);
 		return $this->db->insert($this->_table, $this);
@@ -116,6 +127,9 @@ class BidangA_M extends CI_Model
 		$last_id = $this->BidangA_M->getMaxAktifitas();
 		$max_id = $last_id + 1;
 
+		$last_id_bidang = $this->BidangA_M->getMaxIdBidang();
+		$max_id_bidang = $last_id_bidang + 1;
+
 		$post = $this->input->post();
 		$this->id_bidang_a = $post['id_bidangA'];
 		$this->id_aktifitas = $max_id;
@@ -123,8 +137,13 @@ class BidangA_M extends CI_Model
 		$this->kelas = $post["kelas"];
 		$this->sks = $post["sks"];
 		$this->kode_dosen_1 = $post["kode_dosen1"];
-		$this->kode_dosen_2 = $post["kode_dosen2"];
-		$sql = "INSERT INTO t_aktifitas values ('$max_id','1','3','$post[kode_dosen1]',NOW(),'update')";
+		if ($post["select_dosen"] == "yes") {
+			$this->kode_dosen_2 = NULL;
+		} else {
+			$this->kode_dosen_2 = $post["kode_dosen2"];
+		}
+
+		$sql = "INSERT INTO t_aktifitas values ('$max_id','1','$max_id_bidang','3','$post[kode_dosen1]',NOW(),'update')";
 		$this->db->query($sql);
 		return $this->db->update($this->_table, $this, array('id_bidang_a' => $post['id_bidangA']));
 	}
