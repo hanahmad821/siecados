@@ -33,7 +33,7 @@ class BidangB_M extends CI_Model
 	public $link_conference = "link_conference";
 	public $inserted_at = "inserted_at";
 
-	public function rules_journal()
+	public function rules()
 	{
 		return [
 			[
@@ -107,70 +107,10 @@ class BidangB_M extends CI_Model
 			],
 		];
 	}
-	public function rules_conference()
-	{
-		return [
-			[
-				'field' => 'judul_paper',
-				'label' => 'Judul Paper',
-				'rules' => 'required'
-			],
-			[
-				'field' => 'kode_dosen',
-				'label' => 'Kode Dosen',
-				'rules' => 'required'
-			],
-			[
-				'field' => 'nama_dosen',
-				'label' => 'Nama Dosen',
-				'rules' => 'required'
-			],
-			[
-				'field' => 'afiliasi',
-				'label' => 'Afiliasi'
-			],
-			[
-				'field' => 'nama_conference',
-				'label' => 'Nama Jurnal',
-				'rules' => 'required'
-			],
-			[
-				'field' => 'penyelenggara',
-				'label' => 'penyelenggara',
-				'rules' => 'required'
-			],
-			[
-				'field' => 'link_conference',
-				'label' => 'Link conference',
-				'rules' => 'required'
-			],
-			[
-				'field' => 'indeks',
-				'label' => 'indeks',
-				'rules' => 'required'
-			],
-			[
-				'field' => 'link_indeks',
-				'label' => 'link_indeks',
-				'rules' => 'required'
-			],
-		];
-	}
-	public function getMatkul()
-	{
-
-		return $this->db->get("p_matkul")->result();
-	}
 
 	public function getDosen1()
 	{
 		return $this->db->get_where("p_dosen", ["id_dosen" => 60])->row();
-	}
-
-	public function getDosen2()
-	{
-
-		return $this->db->get("p_dosen")->result();
 	}
 
 	public function getAllBidangB()

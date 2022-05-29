@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class BidangB extends CI_Controller
+class NasJurnal extends CI_Controller
 {
 
 	/**
@@ -22,7 +22,7 @@ class BidangB extends CI_Controller
 	public function __construct()
 	{
 		parent::__construct();
-		$this->load->model('BidangB_M');
+		$this->load->model('NasJurnal_M');
 		$this->load->helper('file');
 		$this->load->helper('url', 'form');
 		$this->load->library('form_validation');
@@ -30,31 +30,15 @@ class BidangB extends CI_Controller
 	}
 	public function index()
 	{
-		$data['bidangB'] = $this->BidangB_M->getAllBidangB();
+		$data['bidangB'] = $this->NasJurnal_M->getAllBidangB();
 		$this->load->view('bidangB/t_bidangB', $data);
 	}
 
 	public function add()
 	{
-		// $bidangB = $this->BidangB_M;
-		// $validation = $this->form_validation;
-		// $validation->set_rules($bidangB->rules());
-
-		// if ($validation->run()) {
-		// 	$bidangB->save();
-		// 	$this->session->set_flashdata('success', 'Berhasil disimpan');
-		// }
-		$data['matkul'] = $this->BidangB_M->getMatkul();
-		$data['dosen1'] = $this->BidangB_M->getDosen1();
-		$data['dosen2'] = $this->BidangB_M->getDosen2();
-
-		$this->load->view("bidangB/input_bidangB", $data);
-	}
-	public function add_journal()
-	{
-		$bidangB = $this->BidangB_M;
+		$bidangB = $this->NasJurnal_M;
 		$validation = $this->form_validation;
-		$validation->set_rules($bidangB->rules_journal());
+		$validation->set_rules($bidangB->rules());
 
 		if ($validation->run()) {
 
@@ -66,7 +50,7 @@ class BidangB extends CI_Controller
 
 			if (!empty($_FILES['loa'])) {
 				unset($config);
-				$config['upload_path']          = './upload/bidangb/loa/';
+				$config['upload_path']          = './upload/bidangb/nas_jurnal/loa/';
 				$config['allowed_types']        = 'jpg|jpeg|png|pdf';
 				$new_name_loa = $var_1 . "-" . $_FILES["loa"]['name'];
 				$config['file_name'] = $new_name_loa;
@@ -80,7 +64,7 @@ class BidangB extends CI_Controller
 
 			if (!empty($_FILES['final_paper'])) {
 				unset($config);
-				$config['upload_path']          = './upload/bidangb/final_paper/';
+				$config['upload_path']          = './upload/bidangb/nas_jurnal/final_paper/';
 				$config['allowed_types']        = 'jpg|jpeg|png|pdf';
 				$new_name_final_paper = $var_1 . "-" . $_FILES["final_paper"]['name'];
 				$config['file_name'] = $new_name_final_paper;
@@ -95,32 +79,16 @@ class BidangB extends CI_Controller
 			$bidangB->save($loa, $final_paper);
 			$this->session->set_flashdata('success', 'Berhasil disimpan');
 		}
-		$data['dosen1'] = $this->BidangB_M->getDosen1();
+		$data['dosen1'] = $this->NasJurnal_M->getDosen1();
 
-		$this->load->view("bidangB/input_bidangB", $data);
-	}
-	public function add_conference()
-	{
-		$bidangB = $this->BidangB_M;
-		$validation = $this->form_validation;
-		$validation->set_rules($bidangB->rules_conference());
-
-		if ($validation->run()) {
-			$bidangB->save();
-			$this->session->set_flashdata('success', 'Berhasil disimpan');
-		}
-		$data['matkul'] = $this->BidangB_M->getMatkul();
-		$data['dosen1'] = $this->BidangB_M->getDosen1();
-		$data['dosen2'] = $this->BidangB_M->getDosen2();
-
-		$this->load->view("bidangB/input_bidangB", $data);
+		$this->load->view("bidangB/input_NasJurnal", $data);
 	}
 
 	public function edit($id_bidangB = null)
 	{
 		if (!isset($id_bidangB)) redirect('BidangB');
 
-		$bidangB = $this->BidangB_M;
+		$bidangB = $this->NasJurnal_M;
 		$validation = $this->form_validation;
 		$validation->set_rules($bidangB->rules());
 
@@ -130,9 +98,9 @@ class BidangB extends CI_Controller
 		} else {
 			print_r($bidangB->rules());
 		}
-		$data['matkul'] = $this->BidangB_M->getMatkul();
-		$data['dosen1'] = $this->BidangB_M->getDosen1();
-		$data['dosen2'] = $this->BidangB_M->getDosen2();
+		$data['matkul'] = $this->NasJurnal_M->getMatkul();
+		$data['dosen1'] = $this->NasJurnal_M->getDosen1();
+		$data['dosen2'] = $this->NasJurnal_M->getDosen2();
 		$data["bidangB"] = $bidangB->getById($id_bidangB);
 		if (!$data["bidangB"]) show_404();
 
@@ -177,11 +145,10 @@ class BidangB extends CI_Controller
 	{
 		if (!isset($id_bidangB)) show_404();
 
-		if ($this->BidangB_M->delete($id_bidangB)) {
+		if ($this->NasJurnal_M->delete($id_bidangB)) {
 			redirect(site_url('bidangB'));
 		}
 	}
-
 
 	public function t_matkul()
 	{

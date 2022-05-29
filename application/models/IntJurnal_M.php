@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class BidangB_M extends CI_Model
+class IntJurnal_M extends CI_Model
 {
 	public function __construct()
 	{
@@ -13,8 +13,7 @@ class BidangB_M extends CI_Model
 	public $id_publikasi = "id_publikasi";
 	public $judul_paper = "judul_paper";
 	public $author1 = "author1";
-	public $author2 = "author2";
-	public $author3 = "author3";
+	public $co_author = "co_author";
 	public $nama_jurnal = "nama_jurnal";
 	public $publisher = "publisher";
 	public $link_jurnal = "link_jurnal";
@@ -26,14 +25,8 @@ class BidangB_M extends CI_Model
 	public $link_publikasi = "link_publikasi";
 	public $indeks = "indeks";
 	public $link_indeks = "link_indeks";
-	public $nama_conference = "nama_conference";
-	public $start_date = "start_date";
-	public $end_date = "end_date";
-	public $penyelenggara = "penyelenggara";
-	public $link_conference = "link_conference";
-	public $inserted_at = "inserted_at";
 
-	public function rules_journal()
+	public function rules()
 	{
 		return [
 			[
@@ -86,16 +79,6 @@ class BidangB_M extends CI_Model
 				'rules' => 'required'
 			],
 			[
-				'field' => 'indeks',
-				'label' => 'indeks',
-				'rules' => 'required'
-			],
-			[
-				'field' => 'link_indeks',
-				'label' => 'link_indeks',
-				'rules' => 'required'
-			],
-			[
 				'field' => 'loa',
 				'label' => 'loa',
 				'rules' => 'callback_file_check_loa'
@@ -105,43 +88,9 @@ class BidangB_M extends CI_Model
 				'label' => 'Final Paper',
 				'rules' => 'callback_file_check_final_paper'
 			],
-		];
-	}
-	public function rules_conference()
-	{
-		return [
 			[
-				'field' => 'judul_paper',
-				'label' => 'Judul Paper',
-				'rules' => 'required'
-			],
-			[
-				'field' => 'kode_dosen',
-				'label' => 'Kode Dosen',
-				'rules' => 'required'
-			],
-			[
-				'field' => 'nama_dosen',
-				'label' => 'Nama Dosen',
-				'rules' => 'required'
-			],
-			[
-				'field' => 'afiliasi',
-				'label' => 'Afiliasi'
-			],
-			[
-				'field' => 'nama_conference',
-				'label' => 'Nama Jurnal',
-				'rules' => 'required'
-			],
-			[
-				'field' => 'penyelenggara',
-				'label' => 'penyelenggara',
-				'rules' => 'required'
-			],
-			[
-				'field' => 'link_conference',
-				'label' => 'Link conference',
+				'field' => 'link_publikasi',
+				'label' => 'Link Publikasi',
 				'rules' => 'required'
 			],
 			[
@@ -156,21 +105,10 @@ class BidangB_M extends CI_Model
 			],
 		];
 	}
-	public function getMatkul()
-	{
-
-		return $this->db->get("p_matkul")->result();
-	}
 
 	public function getDosen1()
 	{
 		return $this->db->get_where("p_dosen", ["id_dosen" => 60])->row();
-	}
-
-	public function getDosen2()
-	{
-
-		return $this->db->get("p_dosen")->result();
 	}
 
 	public function getAllBidangB()
@@ -194,40 +132,61 @@ class BidangB_M extends CI_Model
 			return 1;
 		}
 	}
-	public function save_journal()
+	public function getMaxIdBidang()
 	{
-		$last_id = $this->BidangB_M->getMaxAktifitas();
+		$this->db->select_max('id_bidang_b', 'id_bidang_b');
+		$query = $this->db->get("t_bidang_b");
+		if ($query->num_rows() > 0) {
+			return $query->row('id_bidang_b');
+		} else {
+			return 1;
+		}
+	}
+	public function save($loa, $final_paper)
+	{
+		$last_id = $this->IntJurnal_M->getMaxAktifitas();
 		$max_id = $last_id + 1;
+		$last_id_bidang = $this->IntJurnal_M->getMaxIdBidang();
+		$max_id_bidang = $last_id_bidang + 1;
 
 		$post = $this->input->post();
+
 		$add = $post['repeater-list'];
-		foreach($add as $key => $subValue){
-			$kode_dosen2 = $subValue['kode_dosen2'];
+		$count = count($add);
+		$arr_imp = "";
+		for ($i = 0; $i < $count; $i++) {
+			$arr_imp .= implode(";", $add[$i]) . '|';
 		}
+		// foreach ($add as $key => $subValue) {
+		// 	$kode_dosen_add = $subValue['kode_dosen_add'];
+		// 	$nama_dosen_add = $subValue['nama_dosen_add'];
+		// 	$afiliasi_add = $subValue['afiliasi_add'];
+		// }
+		// $co_author = implode(", ", $_POST["skill"]);
+
 		$this->id_bidang_b = '';
-		$this->id_publikasi = $post["id_publikasi"];
+		$this->id_publikasi = "1";
 		$this->judul_paper = $post["judul_paper"];
-		$this->author1 = "$post[kode_dosen]^$post[nama_dosen]^$post[afiliasi]";
-		$this->author2 = $post["author2"];
-		$this->author3 = $post["author3"];
+		$this->author1 = "$post[kode_dosen];$post[nama_dosen];$post[afiliasi]";
+		$this->co_author = "$arr_imp";
 		$this->nama_jurnal = $post["nama_jurnal"];
 		$this->publisher = $post["publisher"];
 		$this->link_jurnal = $post["link_jurnal"];
 		$this->isbn_isssn = $post["isbn_isssn"];
 		$this->volume_no = $post["volume_no"];
 		$this->tahun = $post["tahun"];
-		$this->loa = $post["loa"];
-		$this->final_paper = $post["final_paper"];
+		$this->loa = $loa;
+		$this->final_paper = $final_paper;
 		$this->link_publikasi = $post["link_publikasi"];
 		$this->indeks = $post["indeks"];
 		$this->link_indeks = $post["link_indeks"];
-		$sql = "INSERT INTO t_aktifitas values ('$max_id','1','3','$post[kode_dosen1]',NOW(),'insert')";
+		$sql = "INSERT INTO t_aktifitas values ('$max_id','2','$max_id_bidang','3','$post[kode_dosen]',NOW(),'insert')";
 		$this->db->query($sql);
 		return $this->db->insert($this->_table, $this);
 	}
 	public function update()
 	{
-		$last_id = $this->BidangB_M->getMaxAktifitas();
+		$last_id = $this->IntJurnal_M->getMaxAktifitas();
 		$max_id = $last_id + 1;
 
 		$post = $this->input->post();

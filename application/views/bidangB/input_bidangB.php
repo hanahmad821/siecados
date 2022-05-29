@@ -94,21 +94,33 @@
                                                     <form class="form" action="<?php echo base_url(); ?>BidangB/add_journal" method="post" enctype="multipart/form-data">
                                                         <div class="form-group">
                                                             <label for="judul_paper">Judul Paper</label>
-                                                            <input class="form-control border-primary" type="text" placeholder="Judul Paper" name="judul_paper">
+                                                            <input class="form-control border-primary <?php echo form_error('judul_paper') ? 'is-invalid' : '' ?>" type="text" placeholder="Judul Paper" name="judul_paper">
+                                                        </div>
+                                                        <div class="invalid-feedback">
+                                                            <?php echo form_error('judul_paper') ?>
                                                         </div>
                                                         <div class="form-group">
                                                             <div class="row">
                                                                 <div class="form-group col-md-6">
-                                                                    <label for="kode_dosen1">Kode Dosen</label>
-                                                                    <input class="form-control <?php echo form_error('kode_dosen1') ? 'is-invalid' : '' ?> border-primary" type="text" name="kode_dosen1" value="<?php echo $dosen1->kode_dosen ?>" placeholder="KODE DOSEN" readonly="readonly">
+                                                                    <label for="kode_dosen">Kode Dosen</label>
+                                                                    <input class="form-control <?php echo form_error('kode_dosen') ? 'is-invalid' : '' ?> border-primary" type="text" name="kode_dosen" value="<?php echo $dosen1->kode_dosen ?>" placeholder="KODE DOSEN" readonly="readonly">
+                                                                </div>
+                                                                <div class="invalid-feedback">
+                                                                    <?php echo form_error('kode_dosen') ?>
                                                                 </div>
                                                                 <div class="form-group col-md-6">
-                                                                    <label for="nama_dosen1">Nama Dosen</label>
-                                                                    <input class="form-control <?php echo form_error('nama_dosen1') ? 'is-invalid' : '' ?> border-primary" type="text" name="nama_dosen1" value="<?php echo $dosen1->nama_dosen; ?>" placeholder="NAMA DOSEN" readonly="readonly">
+                                                                    <label for="nama_dosen">Nama Dosen</label>
+                                                                    <input class="form-control <?php echo form_error('nama_dosen') ? 'is-invalid' : '' ?> border-primary" type="text" name="nama_dosen" value="<?php echo $dosen1->nama_dosen; ?>" placeholder="NAMA DOSEN" readonly="readonly">
+                                                                </div>
+                                                                <div class="invalid-feedback">
+                                                                    <?php echo form_error('nama_dosen') ?>
                                                                 </div>
                                                                 <div class="form-group col-md-12">
                                                                     <label for="afiliasi">Afiliasi</label>
-                                                                    <input class="form-control border-primary" type="text" name="afiliasi" placeholder="Afiliasi">
+                                                                    <input class="form-control border-primary <?php echo form_error('afiliasi') ? 'is-invalid' : '' ?>" type="text" name="afiliasi" placeholder="Afiliasi">
+                                                                </div>
+                                                                <div class="invalid-feedback">
+                                                                    <?php echo form_error('afiliasi') ?>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -129,18 +141,18 @@
                                                                 <div data-repeater-item style="background-color: #f2f2f2; margin-bottom:20px">
                                                                     <div class="row">
                                                                         <div class="form-group col-md-6">
-                                                                            <label for="kd_dosen1">Kode Dosen</label>
-                                                                            <input class="form-control border-primary" type="text" name="kd_dosen1" placeholder="KODE DOSEN">
+                                                                            <label for="kode_dosen_add">Kode Dosen</label>
+                                                                            <input class="form-control border-primary" type="text" name="kode_dosen_add" placeholder="KODE DOSEN">
                                                                         </div>
                                                                         <div class="form-group col-md-6">
-                                                                            <label for="dosen1">Nama Dosen</label>
-                                                                            <input class="form-control border-primary" type="text" name="dosen1" placeholder="NAMA DOSEN">
+                                                                            <label for="nama_dosen_add">Nama Dosen</label>
+                                                                            <input class="form-control border-primary" type="text" name="nama_dosen_add" placeholder="NAMA DOSEN">
                                                                         </div>
                                                                     </div>
                                                                     <div class="row">
                                                                         <div class="form-group col-md-11">
-                                                                            <label for="afiliasi">Afiliasi</label>
-                                                                            <input class="form-control border-primary" type="text" name="afiliasi" placeholder="Afiliasi">
+                                                                            <label for="afiliasi_add">Afiliasi</label>
+                                                                            <input class="form-control border-primary" type="text" name="afiliasi_add" placeholder="Afiliasi">
                                                                         </div>
                                                                         <div class="form-group col-xl-1" style="margin-top: 25px; float:right;">
                                                                             <button type="button" data-repeater-delete class="btn btn-icon btn-danger mr-1">
@@ -157,51 +169,84 @@
                                                             </div>
                                                         </div>
                                                         <div class="form-group">
-                                                            <label for="nama_juranal">Nama Jurnal</label>
-                                                            <input class="form-control border-primary" type="text" placeholder="Nama Jurnal" name="nama_juranal">
+                                                            <label for="nama_jurnal">Nama Jurnal</label>
+                                                            <input class="form-control border-primary <?php echo form_error('nama_jurnal') ? 'is-invalid' : '' ?>" type="text" placeholder="Nama Jurnal" name="nama_jurnal">
+                                                        </div>
+                                                        <div class="invalid-feedback">
+                                                            <?php echo form_error('nama_jurnal') ?>
                                                         </div>
                                                         <div class="form-group">
                                                             <label for="publisher">Publisher</label>
-                                                            <input class="form-control border-primary" type="text" placeholder="Publisher" name="publisher">
+                                                            <input class="form-control border-primary <?php echo form_error('publisher') ? 'is-invalid' : '' ?>" type="text" placeholder="Publisher" name="publisher">
+                                                        </div>
+                                                        <div class="invalid-feedback">
+                                                            <?php echo form_error('publisher') ?>
                                                         </div>
                                                         <div class="form-group">
                                                             <label for="link_jurnal">Link Jurnal</label>
-                                                            <input class="form-control border-primary" type="text" placeholder="Link Jurnal" name="link_jurnal">
+                                                            <input class="form-control border-primary <?php echo form_error('link_jurnal') ? 'is-invalid' : '' ?>" type="text" placeholder="Link Jurnal" name="link_jurnal">
+                                                        </div>
+                                                        <div class="invalid-feedback">
+                                                            <?php echo form_error('link_jurnal') ?>
                                                         </div>
                                                         <div class="form-group">
                                                             <label for="isbn_issn">ISBN/ISSN</label>
-                                                            <input class="form-control border-primary" type="text" placeholder="ISBN/ISSN" name="isbn_issn">
+                                                            <input class="form-control border-primary <?php echo form_error('isbn_isssn') ? 'is-invalid' : '' ?>" type="text" placeholder="ISBN/ISSN" name="isbn_issn">
+                                                        </div>
+                                                        <div class="invalid-feedback">
+                                                            <?php echo form_error('isbn_isssn') ?>
                                                         </div>
                                                         <div class="form-group">
                                                             <label for="volume_no">Volume/No</label>
-                                                            <input class="form-control border-primary" type="text" placeholder="Volume/No" name="volume_no">
+                                                            <input class="form-control border-primary <?php echo form_error('volume_no') ? 'is-invalid' : '' ?>" type="text" placeholder="Volume/No" name="volume_no">
+                                                        </div>
+                                                        <div class="invalid-feedback">
+                                                            <?php echo form_error('volume_no') ?>
                                                         </div>
                                                         <div class="form-group">
                                                             <label for="tahun">Tahun</label>
-                                                            <input class="form-control border-primary" type="text" placeholder="Tahun" name="tahun">
+                                                            <input class="form-control border-primary <?php echo form_error('tahun') ? 'is-invalid' : '' ?>" type="text" placeholder="Tahun" name="tahun">
+                                                        </div>
+                                                        <div class="invalid-feedback">
+                                                            <?php echo form_error('tahun') ?>
                                                         </div>
                                                         <div class="form-group">
                                                             <label for="loa">LOA (PDF/PNG/JPG)</label>
-                                                            <input type="file" class="form-control form-control-file border-primary" id="loa" accept=".jpg, .jpeg, .png, .pdf">
+                                                            <input type="file" class="form-control form-control-file border-primary <?php echo form_error('loa') ? 'is-invalid' : '' ?>" id="loa" name="loa" accept=".jpg, .jpeg, .png, .pdf">
+                                                        </div>
+                                                        <div class="invalid-feedback">
+                                                            <?php echo form_error('loa') ?>
                                                         </div>
                                                         <div class="form-group">
-                                                            <label for="loa">FINAL PAPER (PDF)</label>
-                                                            <input type="file" class="form-control form-control-file border-primary" id="loa" accept=".pdf">
+                                                            <label for="final_paper">FINAL PAPER (PDF)</label>
+                                                            <input type="file" class="form-control form-control-file border-primary <?php echo form_error('final_paper') ? 'is-invalid' : '' ?>" id="final_paper" name="final_paper" accept=".pdf">
+                                                        </div>
+                                                        <div class="invalid-feedback">
+                                                            <?php echo form_error('final_paper') ?>
                                                         </div>
                                                         <div class="form-group">
                                                             <label for="link_publikasi">Link Publikasi</label>
-                                                            <input class="form-control border-primary" type="text" placeholder="Link Publikasi" name="link_publikasi">
+                                                            <input class="form-control border-primary  <?php echo form_error('link_publikasi') ? 'is-invalid' : '' ?>" type="text" placeholder="Link Publikasi" name="link_publikasi">
+                                                        </div>
+                                                        <div class="invalid-feedback">
+                                                            <?php echo form_error('link_publikasi') ?>
                                                         </div>
                                                         <div class="form-group">
                                                             <label for="indeks">Indeks</label>
-                                                            <input class="form-control border-primary" type="text" placeholder="IEEEE/SCOPUS/dll" name="indeks">
+                                                            <input class="form-control border-primary  <?php echo form_error('indeks') ? 'is-invalid' : '' ?>" type="text" placeholder="IEEEE/SCOPUS/dll" name="indeks">
+                                                        </div>
+                                                        <div class="invalid-feedback">
+                                                            <?php echo form_error('indeks') ?>
                                                         </div>
                                                         <div class="form-group">
                                                             <label for="link_indeks">Link Indeks</label>
-                                                            <input class="form-control border-primary" type="text" placeholder="Link Indeks" name="link_indeks">
+                                                            <input class="form-control border-primary  <?php echo form_error('link_indeks') ? 'is-invalid' : '' ?>" type="text" placeholder="Link Indeks" name="link_indeks">
+                                                        </div>
+                                                        <div class="invalid-feedback">
+                                                            <?php echo form_error('link_indeks') ?>
                                                         </div>
                                                         <div class="form-actions">
-                                                            <a href="<?php echo site_url('BidangA/add') ?>" type="button" class="btn btn-danger mr-1">
+                                                            <a href="<?php echo site_url('BidangB/add_journal') ?>" type="button" class="btn btn-danger mr-1">
                                                                 <i class="ft-x"></i> Cancel
                                                             </a>
                                                             <button type="submit" class="btn btn-primary" name="btn" value="Save">
@@ -212,7 +257,7 @@
                                                 </div>
 
                                                 <div id="nas-journal" style="display: none;">
-                                                    <form class="form" action="<?php echo base_url(); ?>BidangB/add_journal" method="post">
+                                                    <form class="form" action="<?php echo base_url(); ?>BidangB/add_journal" method="post" enctype="multipart/form-data">
                                                         <div class="form-group">
                                                             <label for="judul_paper">Judul Paper</label>
                                                             <input class="form-control border-primary" type="text" placeholder="Judul Paper" name="judul_paper">
@@ -220,12 +265,12 @@
                                                         <div class="form-group">
                                                             <div class="row">
                                                                 <div class="form-group col-md-6">
-                                                                    <label for="kode_dosen1">Kode Dosen</label>
-                                                                    <input class="form-control <?php echo form_error('kode_dosen1') ? 'is-invalid' : '' ?> border-primary" type="text" name="kode_dosen1" value="<?php echo $dosen1->kode_dosen ?>" placeholder="KODE DOSEN" readonly="readonly">
+                                                                    <label for="kode_dosen">Kode Dosen</label>
+                                                                    <input class="form-control <?php echo form_error('kode_dosen') ? 'is-invalid' : '' ?> border-primary" type="text" name="kode_dosen" value="<?php echo $dosen1->kode_dosen ?>" placeholder="KODE DOSEN" readonly="readonly">
                                                                 </div>
                                                                 <div class="form-group col-md-6">
-                                                                    <label for="nama_dosen1">Nama Dosen</label>
-                                                                    <input class="form-control <?php echo form_error('nama_dosen1') ? 'is-invalid' : '' ?> border-primary" type="text" name="nama_dosen1" value="<?php echo $dosen1->nama_dosen; ?>" placeholder="NAMA DOSEN" readonly="readonly">
+                                                                    <label for="nama_dosen">Nama Dosen</label>
+                                                                    <input class="form-control <?php echo form_error('nama_dosen') ? 'is-invalid' : '' ?> border-primary" type="text" name="nama_dosen" value="<?php echo $dosen1->nama_dosen; ?>" placeholder="NAMA DOSEN" readonly="readonly">
                                                                 </div>
                                                                 <div class="form-group col-md-12">
                                                                     <label for="afiliasi">Afiliasi</label>
@@ -250,18 +295,18 @@
                                                                 <div data-repeater-item style="background-color: #f2f2f2; margin-bottom:20px">
                                                                     <div class="row">
                                                                         <div class="form-group col-md-6">
-                                                                            <label for="kd_dosen1">Kode Dosen</label>
-                                                                            <input class="form-control border-primary" type="text" name="kd_dosen1" placeholder="KODE DOSEN">
+                                                                            <label for="kode_dosen_add">Kode Dosen</label>
+                                                                            <input class="form-control border-primary" type="text" name="kode_dosen_add" placeholder="KODE DOSEN">
                                                                         </div>
                                                                         <div class="form-group col-md-6">
-                                                                            <label for="dosen1">Nama Dosen</label>
-                                                                            <input class="form-control border-primary" type="text" name="dosen1" placeholder="NAMA DOSEN">
+                                                                            <label for="nama_dosen_add">Nama Dosen</label>
+                                                                            <input class="form-control border-primary" type="text" name="nama_dosen_add" placeholder="NAMA DOSEN">
                                                                         </div>
                                                                     </div>
                                                                     <div class="row">
                                                                         <div class="form-group col-md-11">
-                                                                            <label for="afiliasi">Afiliasi</label>
-                                                                            <input class="form-control border-primary" type="text" name="afiliasi" placeholder="Afiliasi">
+                                                                            <label for="afiliasi_add">Afiliasi</label>
+                                                                            <input class="form-control border-primary" type="text" name="afiliasi_add" placeholder="Afiliasi">
                                                                         </div>
                                                                         <div class="form-group col-xl-1" style="margin-top: 25px; float:right;">
                                                                             <button type="button" data-repeater-delete class="btn btn-icon btn-danger mr-1">
@@ -278,8 +323,8 @@
                                                             </div>
                                                         </div>
                                                         <div class="form-group">
-                                                            <label for="nama_juranal">Nama Jurnal</label>
-                                                            <input class="form-control border-primary" type="text" placeholder="Nama Jurnal" name="nama_juranal">
+                                                            <label for="nama_jurnal">Nama Jurnal</label>
+                                                            <input class="form-control border-primary" type="text" placeholder="Nama Jurnal" name="nama_jurnal">
                                                         </div>
                                                         <div class="form-group">
                                                             <label for="publisher">Publisher</label>
@@ -321,10 +366,18 @@
                                                             <label for="link_indeks">Link Indeks</label>
                                                             <input class="form-control border-primary" type="text" placeholder="Link Indeks" name="link_indeks">
                                                         </div>
+                                                        <div class="form-actions">
+                                                            <a href="<?php echo site_url('BidangB/add_journal') ?>" type="button" class="btn btn-danger mr-1">
+                                                                <i class="ft-x"></i> Cancel
+                                                            </a>
+                                                            <button type="submit" class="btn btn-primary" name="btn" value="Save">
+                                                                <i class="la la-check-square-o"></i> Save
+                                                            </button>
+                                                        </div>
                                                     </form>
                                                 </div>
                                                 <div id="int-con" style="display: none;">
-                                                    <form class="form" action="<?php echo base_url(); ?>BidangB/add_conference" method="post">
+                                                    <form class="form" action="<?php echo base_url(); ?>BidangB/add_conference" method="post" enctype="multipart/form-data">
                                                         <div class="form-group">
                                                             <label for="judul_paper">Judul Paper</label>
                                                             <input class="form-control border-primary" type="text" placeholder="Judul Paper" name="judul_paper">
@@ -332,12 +385,12 @@
                                                         <div class="form-group">
                                                             <div class="row">
                                                                 <div class="form-group col-md-6">
-                                                                    <label for="kode_dosen1">Kode Dosen</label>
-                                                                    <input class="form-control <?php echo form_error('kode_dosen1') ? 'is-invalid' : '' ?> border-primary" type="text" name="kode_dosen1" value="<?php echo $dosen1->kode_dosen ?>" placeholder="KODE DOSEN" readonly="readonly">
+                                                                    <label for="kode_dosen">Kode Dosen</label>
+                                                                    <input class="form-control <?php echo form_error('kode_dosen') ? 'is-invalid' : '' ?> border-primary" type="text" name="kode_dosen" value="<?php echo $dosen1->kode_dosen ?>" placeholder="KODE DOSEN" readonly="readonly">
                                                                 </div>
                                                                 <div class="form-group col-md-6">
-                                                                    <label for="nama_dosen1">Nama Dosen</label>
-                                                                    <input class="form-control <?php echo form_error('nama_dosen1') ? 'is-invalid' : '' ?> border-primary" type="text" name="nama_dosen1" value="<?php echo $dosen1->nama_dosen; ?>" placeholder="NAMA DOSEN" readonly="readonly">
+                                                                    <label for="nama_dosen">Nama Dosen</label>
+                                                                    <input class="form-control <?php echo form_error('nama_dosen') ? 'is-invalid' : '' ?> border-primary" type="text" name="nama_dosen" value="<?php echo $dosen1->nama_dosen; ?>" placeholder="NAMA DOSEN" readonly="readonly">
                                                                 </div>
                                                                 <div class="form-group col-md-12">
                                                                     <label for="afiliasi">Afiliasi</label>
@@ -362,18 +415,18 @@
                                                                 <div data-repeater-item style="background-color: #f2f2f2; margin-bottom:20px">
                                                                     <div class="row">
                                                                         <div class="form-group col-md-6">
-                                                                            <label for="kd_dosen1">Kode Dosen</label>
-                                                                            <input class="form-control border-primary" type="text" name="kd_dosen1" placeholder="KODE DOSEN">
+                                                                            <label for="kode_dosen_add">Kode Dosen</label>
+                                                                            <input class="form-control border-primary" type="text" name="kode_dosen_add" placeholder="KODE DOSEN">
                                                                         </div>
                                                                         <div class="form-group col-md-6">
-                                                                            <label for="dosen1">Nama Dosen</label>
-                                                                            <input class="form-control border-primary" type="text" name="dosen1" placeholder="NAMA DOSEN">
+                                                                            <label for="nama_dosen_add">Nama Dosen</label>
+                                                                            <input class="form-control border-primary" type="text" name="nama_dosen_add" placeholder="NAMA DOSEN">
                                                                         </div>
                                                                     </div>
                                                                     <div class="row">
                                                                         <div class="form-group col-md-11">
-                                                                            <label for="afiliasi">Afiliasi</label>
-                                                                            <input class="form-control border-primary" type="text" name="afiliasi" placeholder="Afiliasi">
+                                                                            <label for="afiliasi_add">Afiliasi</label>
+                                                                            <input class="form-control border-primary" type="text" name="afiliasi_add" placeholder="Afiliasi">
                                                                         </div>
                                                                         <div class="form-group col-xl-1" style="margin-top: 25px; float:right;">
                                                                             <button type="button" data-repeater-delete class="btn btn-icon btn-danger mr-1">
@@ -390,8 +443,8 @@
                                                             </div>
                                                         </div>
                                                         <div class="form-group">
-                                                            <label for="nama_juranal">Nama Conference</label>
-                                                            <input class="form-control border-primary" type="text" placeholder="Nama Jurnal" name="nama_juranal">
+                                                            <label for="nama_conference">Nama Conference</label>
+                                                            <input class="form-control border-primary" type="text" placeholder="Nama Conference" name="nama_conference">
                                                         </div>
                                                         <!-- <div class="form-group">
                                                             <label>Pelaksanaan</label>
@@ -454,7 +507,15 @@
                                                             <label for="link_indeks">Link Indeks</label>
                                                             <input class="form-control border-primary" type="text" placeholder="Link Indeks" name="link_indeks">
                                                         </div>
-                                                        <form class="form" action="<?php echo base_url(); ?>BidangB/add_journal" method="post">
+                                                        <div class="form-actions">
+                                                            <a href="<?php echo site_url('BidangA/add_conference') ?>" type="button" class="btn btn-danger mr-1">
+                                                                <i class="ft-x"></i> Cancel
+                                                            </a>
+                                                            <button type="submit" class="btn btn-primary" name="btn" value="Save">
+                                                                <i class="la la-check-square-o"></i> Save
+                                                            </button>
+                                                        </div>
+                                                        <!-- <form class="form" action="<?php echo base_url(); ?>BidangB/add_journal" method="post"> -->
                                                 </div>
                                             </div>
                                             <!-- <div class="form-actions">

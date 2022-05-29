@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class BidangB extends CI_Controller
+class NasJurnal extends CI_Controller
 {
 
 	/**

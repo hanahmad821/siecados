@@ -23,6 +23,14 @@
       <li class=" nav-item"><a href="<?php echo base_url(); ?>BidangA"><i class="ft-book"></i><span class="menu-title" data-i18n="">Bidang A</span></a>
       </li>
       <li class=" nav-item"><a href="<?php echo base_url(); ?>BidangB"><i class="ft-book"></i><span class="menu-title" data-i18n="">Bidang B</span></a>
+        <ul class="menu-content">
+          <li><a class="menu-item" href="<?php echo base_url(); ?>IntJurnal/add">Int Journal</a>
+          </li>
+          <li><a class="menu-item" href="<?php echo base_url(); ?>NasJurnal/add">Nas Journal</a>
+          </li>
+          <li><a class="menu-item" href="<?php echo base_url(); ?>IntConference/add">Int Conference</a>
+          </li>
+        </ul>
       </li>
       <li class=" nav-item"><a href="<?php echo base_url(); ?>BidangC"><i class="ft-book"></i><span class="menu-title" data-i18n="">Bidang C</span></a>
       </li>

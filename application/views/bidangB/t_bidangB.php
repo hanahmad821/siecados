@@ -56,32 +56,42 @@
                                 </div>
                                 <div class="card-content collapse show">
                                     <div class="card-body card-dashboard">
-                                        <a href="<?php echo site_url('bidangA/add') ?>" class="btn btn-info btn-md mb-2"><i class="ft-file-plus"></i> Add New</a>
-                                        <table class="table table-striped table-bordered file-export">
+                                        <a href="<?php echo site_url('BidangB/add') ?>" class="btn btn-info btn-md mb-2"><i class="ft-file-plus"></i> Add New</a>
+                                        <table class="table table-striped table-bordered file-export table-responsive">
                                             <thead>
                                                 <tr>
                                                     <th>No</th>
-                                                    <th>Kode Matkul</th>
-                                                    <th>Kelas</th>
-                                                    <th>SKS</th>
-                                                    <th>Dosen 1</th>
-                                                    <th>Dosen 2</th>
+                                                    <th>Publikasi</th>
+                                                    <th>Judul Paper</th>
+                                                    <th>Author1</th>
+                                                    <th>Co Author</th>
+                                                    <th>LOA</th>
+                                                    <th>Final Paper</th>
+                                                    <th>Indeks</th>
+                                                    <th>Link Indeks</th>
                                                     <th>Action</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
                                                 <?php $no = 1; ?>
-                                                <?php foreach ($bidangA as $bidangA) : ?>
+                                                <?php foreach ($BidangB as $BidangB) : ?>
                                                     <tr>
                                                         <td><?php echo $no; ?></td>
-                                                        <td><?php echo $bidangA->kode_matkul; ?></td>
-                                                        <td><?php echo $bidangA->kelas; ?></td>
-                                                        <td><?php echo $bidangA->sks; ?></td>
-                                                        <td><?php echo $bidangA->kode_dosen_1; ?></td>
-                                                        <td><?php echo $bidangA->kode_dosen_2; ?></td>
+                                                        <td><?php echo $BidangB->kode_dosen; ?></td>
+                                                        <td><?php echo $BidangB->nama_kegiatan; ?></td>
+                                                        <td><?php echo $BidangB->tempat_pelaksanaan; ?></td>
+                                                        <td><?php echo $BidangB->waktu_pelaksanaan; ?></td>
+                                                        <td><?php echo $BidangB->nama_komunitas; ?></td>
+                                                        <td><?php echo $BidangB->judul_materi; ?></td>
+                                                        <td><?php echo $BidangB->jumlah_peserta; ?></td>
+                                                        <td><?php echo $BidangB->sertifikat_pembicara; ?></td>
+                                                        <td><?php echo $BidangB->dokumentasi; ?></td>
+                                                        <td><?php echo $BidangB->proposal; ?></td>
+                                                        <td><?php echo $BidangB->laporan; ?></td>
+                                                        <td><?php echo $BidangB->materi; ?></td>
                                                         <td align="center">
-                                                            <a href="<?php echo site_url('bidangA/edit/' . $bidangA->id_bidang_a) ?>" class="btn btn-primary btn-sm"><i class="la la-edit"></i></a>
-                                                            <a onclick="deleteConfirm('<?php echo site_url('bidangA/delete/' . $bidangA->id_bidang_a) ?>')" href="#!" class="btn btn-danger btn-sm"><i class="la la-trash"></i></a>
+                                                            <a href="<?php echo site_url('BidangB/edit/' . $BidangB->id_bidang_c) ?>" class="btn btn-primary btn-sm"><i class="la la-edit"></i></a>
+                                                            <a onclick="deleteConfirm('<?php echo site_url('BidangB/delete/' . $BidangB->id_bidang_c) ?>')" href="#!" class="btn btn-danger btn-sm"><i class="la la-trash"></i></a>
                                                         </td>
                                                     </tr>
                                                 <?php $no++;
@@ -90,11 +100,18 @@
                                             <tfoot>
                                                 <tr>
                                                     <th>No</th>
-                                                    <th>Kode Matkul</th>
-                                                    <th>Kelas</th>
-                                                    <th>Sks</th>
-                                                    <th>Dosen 1</th>
-                                                    <th>Dosen 2</th>
+                                                    <th>Kode Dosen</th>
+                                                    <th>Nama Kegiatan</th>
+                                                    <th>Tempat Pelaksanaan</th>
+                                                    <th>Waktu Pelaksanaan</th>
+                                                    <th>Nama Komunitas</th>
+                                                    <th>Judul Materi</th>
+                                                    <th>Jumlah Peserta</th>
+                                                    <th>Sertifikat Pembicara</th>
+                                                    <th>Dokumentasi</th>
+                                                    <th>Proposal</th>
+                                                    <th>Laporan</th>
+                                                    <th>Materi</th>
                                                     <th>Action</th>
                                                 </tr>
                                             </tfoot>
